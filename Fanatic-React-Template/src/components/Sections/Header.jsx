@@ -60,6 +60,20 @@ const Wrapper = styled.section`
 const LeftSide = styled.div`
   width: 50%;
   height: 100%;
+  
+  h1 {
+    animation: titleGlow 3s ease-in-out infinite alternate;
+  }
+  
+  @keyframes titleGlow {
+    0% {
+      text-shadow: 0 0 5px rgba(118, 32, 255, 0.3);
+    }
+    100% {
+      text-shadow: 0 0 20px rgba(118, 32, 255, 0.6), 0 0 30px rgba(118, 32, 255, 0.4);
+    }
+  }
+  
   @media (max-width: 960px) {
     width: 100%;
     order: 2;
@@ -94,6 +108,14 @@ const BtnWrapper = styled.div`
   @media (max-width: 960px) {
     margin: 0 auto;
   }
+  
+  div {
+    transition: all 0.3s ease;
+  }
+  
+  div:hover {
+    transform: translateY(-2px);
+  }
 `;
 const GreyDiv = styled.div`
   width: 30%;
@@ -117,6 +139,12 @@ const ImageWrapper = styled.div`
   }
 `;
 const Img = styled.img`
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.02);
+  }
+  
   @media (max-width: 560px) {
     width: 80%;
     height: auto;
@@ -129,6 +157,13 @@ const QuoteWrapper = styled.div`
   max-width: 330px;
   padding: 30px;
   z-index: 99;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+  
   @media (max-width: 960px) {
     left: 20px;
   }
@@ -146,6 +181,17 @@ const DotsWrapper = styled.div`
   right: -100px;
   bottom: 100px;
   z-index: 2;
+  animation: float 6s ease-in-out infinite;
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-20px) rotate(5deg);
+    }
+  }
+  
   @media (max-width: 960px) {
     right: 100px;
   }

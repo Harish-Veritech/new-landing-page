@@ -97,12 +97,48 @@ const RiskItem = styled.div`
   background: #fff5f5;
   border-left: 4px solid #e53e3e;
   border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+  }
+  
+  &:hover {
+    transform: translateX(10px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(229, 62, 62, 0.2);
+    background: linear-gradient(135deg, #fff5f5 0%, #ffe6e6 100%);
+    border-left-color: #dc2626;
+  }
+  
+  &:hover::before {
+    left: 100%;
+  }
+  
+  &:active {
+    transform: translateX(5px) scale(1.01);
+  }
 `;
 
 const RiskIcon = styled.div`
   font-size: 24px;
   flex-shrink: 0;
   margin-top: 2px;
+  transition: all 0.3s ease;
+  
+  ${RiskItem}:hover & {
+    transform: scale(1.3) rotate(15deg);
+    filter: drop-shadow(0 4px 8px rgba(229, 62, 62, 0.3));
+  }
 `;
 
 const RiskText = styled.div`
@@ -149,6 +185,14 @@ const PersonIcon = styled.div`
   padding: 20px;
   border-radius: 50%;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  
+  &:hover {
+    transform: scale(1.1) rotate(-5deg);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  }
 `;
 
 const NetworkIcon = styled.div`
@@ -157,4 +201,13 @@ const NetworkIcon = styled.div`
   padding: 15px;
   border-radius: 50%;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  
+  &:hover {
+    transform: scale(1.2) rotate(10deg);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+    color: white;
+  }
 `;
