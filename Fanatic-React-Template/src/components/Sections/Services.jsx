@@ -21,37 +21,42 @@ export default function Services() {
       <div className="whiteBg" style={{ padding: "60px 0" }}>
         <div className="container">
           <HeaderInfo>
-            <h1 className="font40 extraBold">Our Awesome Services</h1>
+            <h1 className="font40 extraBold">ABM Solutions for Universities</h1>
             <p className="font13">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-              <br />
-              labore et dolore magna aliquyam erat, sed diam voluptua.
+              Unlock the power of Account-Based Marketing to attract, engage,
+              and enroll your ideal students. Our ABM platform helps
+              universities target high-value prospects, personalize outreach,
+              and optimize recruitment campaigns for maximum impact.
             </p>
           </HeaderInfo>
           <ServiceBoxRow className="flex">
             <ServiceBoxWrapper>
               <ServiceBox
-                icon="roller"
-                title="Graphic Design"
-                subtitle="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
+                icon="target"
+                title="Targeted Student Outreach"
+                subtitle="Identify and engage high-value student segments using advanced data analytics and personalized campaigns."
               />
             </ServiceBoxWrapper>
             <ServiceBoxWrapper>
               <ServiceBox
-                icon="monitor"
-                title="Web Design"
-                subtitle="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore."
+                icon="analytics"
+                title="Data-Driven Insights"
+                subtitle="Leverage actionable insights to refine recruitment strategies and improve conversion rates."
               />
             </ServiceBoxWrapper>
             <ServiceBoxWrapper>
               <ServiceBox
-                icon="browser"
-                title="Development"
-                subtitle="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat."
+                icon="engagement"
+                title="Personalized Engagement"
+                subtitle="Deliver tailored content and experiences to nurture prospective students throughout their journey."
               />
             </ServiceBoxWrapper>
             <ServiceBoxWrapper>
-              <ServiceBox icon="printer" title="Print" subtitle="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor." />
+              <ServiceBox
+                icon="results"
+                title="Measurable Results"
+                subtitle="Track campaign performance and enrollment outcomes with real-time dashboards and reporting."
+              />
             </ServiceBoxWrapper>
           </ServiceBoxRow>
         </div>
@@ -59,18 +64,32 @@ export default function Services() {
           <div className="container">
             <Advertising className="flexSpaceCenter">
               <AddLeft>
-                <h4 className="font15 semiBold">A few words about company</h4>
-                <h2 className="font40 extraBold">A Study of Creativity</h2>
+                <h4 className="font15 semiBold">Why Choose ABM?</h4>
+                <h2 className="font40 extraBold">
+                  Transform Your Recruitment Strategy
+                </h2>
                 <p className="font12">
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-                  diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                  ABM empowers universities to focus resources on the most
+                  promising prospects, personalize every interaction, and
+                  achieve better enrollment outcomes. Join leading institutions
+                  using ABM to boost engagement, diversity, and student success.
                 </p>
-                <ButtonsRow className="flexNullCenter" style={{ margin: "30px 0"}}>
+                <ButtonsRow
+                  className="flexNullCenter"
+                  style={{ margin: "30px 0" }}
+                >
                   <div style={{ width: "190px" }}>
-                    <FullButton title="Get Started" action={() => alert("clicked")} />
+                    <FullButton
+                      title="Get Started"
+                      action={() => alert("clicked")}
+                    />
                   </div>
                   <div style={{ width: "190px", marginLeft: "15px" }}>
-                    <FullButton title="Contact Us" action={() => alert("clicked")} border />
+                    <FullButton
+                      title="Contact Us"
+                      action={() => alert("clicked")}
+                      border
+                    />
                   </div>
                 </ButtonsRow>
               </AddLeft>
@@ -78,18 +97,18 @@ export default function Services() {
                 <AddRightInner>
                   <div className="flexNullCenter">
                     <AddImgWrapp1 className="flexCenter">
-                      <img src={AddImage1} alt="office" />
+                      <img src={AddImage1} alt="ABM dashboard" />
                     </AddImgWrapp1>
                     <AddImgWrapp2>
-                      <img src={AddImage2} alt="office" />
+                      <img src={AddImage2} alt="Student engagement" />
                     </AddImgWrapp2>
                   </div>
                   <div className="flexNullCenter">
                     <AddImgWrapp3>
-                      <img src={AddImage3} alt="office" />
+                      <img src={AddImage3} alt="Analytics" />
                     </AddImgWrapp3>
                     <AddImgWrapp4>
-                      <img src={AddImage4} alt="office" />
+                      <img src={AddImage4} alt="Results" />
                     </AddImgWrapp4>
                   </div>
                 </AddRightInner>
