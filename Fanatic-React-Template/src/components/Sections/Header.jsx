@@ -3,9 +3,8 @@ import styled from "styled-components";
 // Components
 import FullButton from "../Buttons/FullButton";
 // Assets
-import HeaderImage from "../../assets/img/header-img.png";
+import HeaderImage from "../../assets/img/hero-image.webp";
 import QuotesIcon from "../../assets/svg/Quotes";
-import Dots from "../../assets/svg/Dots";
 
 export default function Header() {
   return (
@@ -26,7 +25,7 @@ export default function Header() {
       </LeftSide>
       <RightSide>
         <ImageWrapper>
-          <Img className="radius8" src={HeaderImage} alt="office" style={{zIndex: 9}} />
+          <Img className="radius8" height={500} src={HeaderImage} alt="office" style={{zIndex: 9}} />
           <QuoteWrapper className="flexCenter darkBg radius8">
             <QuotesWrapper>
               <QuotesIcon />
@@ -38,11 +37,7 @@ export default function Header() {
               <p className="font13 orangeColor textRight" style={{marginTop: '10px'}}>Industry Leading Platform</p>
             </div>
           </QuoteWrapper>
-          <DotsWrapper>
-            <Dots />
-          </DotsWrapper>
         </ImageWrapper>
-        <GreyDiv className="lightBg"></GreyDiv>
       </RightSide>
     </Wrapper>
   );
@@ -53,6 +48,16 @@ const Wrapper = styled.section`
   padding-top: 80px;
   width: 100%;
   min-height: 840px;
+  position: relative;
+  background: 
+    linear-gradient(180deg, rgba(255, 255, 255, 1) 10%, transparent 100%),
+    url('./assets/img/dots-dark.svg') no-repeat center center / cover;
+  
+  > * {
+    position: relative;
+    z-index: 2;
+  }
+  
   @media (max-width: 960px) {
     flex-direction: column;
   }
@@ -117,17 +122,6 @@ const BtnWrapper = styled.div`
     transform: translateY(-2px);
   }
 `;
-const GreyDiv = styled.div`
-  width: 30%;
-  height: 700px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 0;
-  @media (max-width: 960px) {
-    display: none;
-  }
-`;
 const ImageWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
@@ -175,29 +169,6 @@ const QuotesWrapper = styled.div`
   position: absolute;
   left: -20px;
   top: -10px;
-`;
-const DotsWrapper = styled.div`
-  position: absolute;
-  right: -100px;
-  bottom: 100px;
-  z-index: 2;
-  animation: float 6s ease-in-out infinite;
-  
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px) rotate(0deg);
-    }
-    50% {
-      transform: translateY(-20px) rotate(5deg);
-    }
-  }
-  
-  @media (max-width: 960px) {
-    right: 100px;
-  }
-  @media (max-width: 560px) {
-    display: none;
-  }
 `;
 
 
