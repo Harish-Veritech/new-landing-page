@@ -29,7 +29,7 @@ export default function TopNavbar() {
           <Link className="pointer flexNullCenter" to="home" smooth={true}>
             <LogoIcon />
             <h1 style={{ marginLeft: "15px" }} className="font20 extraBold">
-              fanatic
+              ABM Technologies
             </h1>
           </Link>
           <BurderWrapper className="pointer" onClick={() => toggleSidebar(!sidebarOpen)}>
@@ -42,23 +42,23 @@ export default function TopNavbar() {
               </Link>
             </li>
             <li className="semiBold font15 pointer">
+              <Link activeClass="active" style={{ padding: "10px 15px" }} to="why-abm" spy={true} smooth={true} offset={-80}>
+                Why ABM
+              </Link>
+            </li>
+            <li className="semiBold font15 pointer">
               <Link activeClass="active" style={{ padding: "10px 15px" }} to="services" spy={true} smooth={true} offset={-80}>
-                Services
+                Solutions
               </Link>
             </li>
             <li className="semiBold font15 pointer">
-              <Link activeClass="active" style={{ padding: "10px 15px" }} to="projects" spy={true} smooth={true} offset={-80}>
-                Projects
+              <Link activeClass="active" style={{ padding: "10px 15px" }} to="tech-stack" spy={true} smooth={true} offset={-80}>
+                Technology
               </Link>
             </li>
             <li className="semiBold font15 pointer">
-              <Link activeClass="active" style={{ padding: "10px 15px" }} to="blog" spy={true} smooth={true} offset={-80}>
-                Blog
-              </Link>
-            </li>
-            <li className="semiBold font15 pointer">
-              <Link activeClass="active" style={{ padding: "10px 15px" }} to="pricing" spy={true} smooth={true} offset={-80}>
-                Pricing
+              <Link activeClass="active" style={{ padding: "10px 15px" }} to="compliance" spy={true} smooth={true} offset={-80}>
+                Compliance
               </Link>
             </li>
             <li className="semiBold font15 pointer">
@@ -69,13 +69,13 @@ export default function TopNavbar() {
           </UlWrapper>
           <UlWrapperRight className="flexNullCenter">
             <li className="semiBold font15 pointer">
-              <a href="/" style={{ padding: "10px 30px 10px 0" }}>
-                Log in
+              <a href="mailto:hello@abmtechnologies.com" style={{ padding: "10px 30px 10px 0" }}>
+                Contact Us
               </a>
             </li>
             <li className="semiBold font15 pointer flexCenter">
-              <a href="/" className="radius8 lightBg" style={{ padding: "10px 15px" }}>
-                Get Started
+              <a href="#contact" className="radius8 lightBg" style={{ padding: "10px 15px" }}>
+                Schedule Demo
               </a>
             </li>
           </UlWrapperRight>

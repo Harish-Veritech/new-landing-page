@@ -12,13 +12,15 @@ export default function Header() {
     <Wrapper id="home" className="container flexSpaceCenter">
       <LeftSide className="flexCenter">
         <div>
-          <h1 className="extraBold font60">We are Digital Agency.</h1>
+          <h1 className="extraBold font60">Empowering Universities with Future-Ready Digital Solutions</h1>
           <HeaderP className="font13 semiBold">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-            voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+            Transform your university into a connected, scalable, and high-performing digital ecosystem.
           </HeaderP>
           <BtnWrapper>
-            <FullButton title="Get Started" />
+            <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
+              <FullButton title="Schedule a Demo" />
+              <FullButton title="Contact Us" border />
+            </div>
           </BtnWrapper>
         </div>
       </LeftSide>
@@ -31,9 +33,9 @@ export default function Header() {
             </QuotesWrapper>
             <div>
               <p className="font15 whiteColor">
-                <em>Friends, such as we desire, are dreams and fables. Friendship demands the ability to do without it.</em>
+                <em>71% of the top 100 universities use Drupal — future-proof your institution with scalable, reliable tech.</em>
               </p>
-              <p className="font13 orangeColor textRight" style={{marginTop: '10px'}}>Ralph Waldo Emerson</p>
+              <p className="font13 orangeColor textRight" style={{marginTop: '10px'}}>Industry Leading Platform</p>
             </div>
           </QuoteWrapper>
           <DotsWrapper>
@@ -88,7 +90,7 @@ const HeaderP = styled.div`
   }
 `;
 const BtnWrapper = styled.div`
-  max-width: 190px;
+  max-width: 400px;
   @media (max-width: 960px) {
     margin: 0 auto;
   }

@@ -11,26 +11,29 @@ export default function Contact() {
       <div className="lightBg">
         <div className="container">
           <HeaderInfo>
-            <h1 className="font40 extraBold">Let's get in touch</h1>
+            <h1 className="font40 extraBold">Ready to Transform Your University?</h1>
             <p className="font13">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+              Get in touch with our experts to discuss how ABM Technologies can help
               <br />
-              labore et dolore magna aliquyam erat, sed diam voluptua.
+              revolutionize your university's digital infrastructure and student experience.
             </p>
           </HeaderInfo>
           <div className="row" style={{ paddingBottom: "30px" }}>
             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
               <Form>
-                <label className="font13">First name:</label>
-                <input type="text" id="fname" name="fname" className="font20 extraBold" />
+                <label className="font13">University/Institution Name:</label>
+                <input type="text" id="institution" name="institution" className="font20 extraBold" />
+                <label className="font13">Contact Person:</label>
+                <input type="text" id="contact" name="contact" className="font20 extraBold" />
                 <label className="font13">Email:</label>
-                <input type="text" id="email" name="email" className="font20 extraBold" />
-                <label className="font13">Subject:</label>
-                <input type="text" id="subject" name="subject" className="font20 extraBold" />
-                <textarea rows="4" cols="50" type="text" id="message" name="message" className="font20 extraBold" />
+                <input type="email" id="email" name="email" className="font20 extraBold" />
+                <label className="font13">Phone:</label>
+                <input type="tel" id="phone" name="phone" className="font20 extraBold" />
+                <label className="font13">Tell us about your digital transformation needs:</label>
+                <textarea rows="4" cols="50" id="message" name="message" className="font20 extraBold" placeholder="Describe your current challenges and what you hope to achieve..." />
               </Form>
               <SumbitWrapper className="flex">
-                <ButtonInput type="submit" value="Send Message" className="pointer animate radius8" style={{ maxWidth: "220px" }} />
+                <ButtonInput type="submit" value="Request Consultation" className="pointer animate radius8" style={{ maxWidth: "220px" }} />
               </SumbitWrapper>
             </div>
             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 flex">

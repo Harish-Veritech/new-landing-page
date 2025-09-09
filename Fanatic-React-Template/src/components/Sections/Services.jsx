@@ -21,37 +21,41 @@ export default function Services() {
       <div className="whiteBg" style={{ padding: "60px 0" }}>
         <div className="container">
           <HeaderInfo>
-            <h1 className="font40 extraBold">Our Awesome Services</h1>
+            <h1 className="font40 extraBold">Custom Solutions Built for Universities</h1>
             <p className="font13">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+              Transform your university's digital infrastructure with our comprehensive suite of solutions
               <br />
-              labore et dolore magna aliquyam erat, sed diam voluptua.
+              designed specifically for higher education institutions.
             </p>
           </HeaderInfo>
           <ServiceBoxRow className="flex">
             <ServiceBoxWrapper>
               <ServiceBox
-                icon="roller"
-                title="Graphic Design"
-                subtitle="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
+                icon="browser"
+                title="Custom, Connected Digital Ecosystems"
+                subtitle="Integrated systems that connect your LMS, CRM, and campus operations into one smart digital twin."
               />
             </ServiceBoxWrapper>
             <ServiceBoxWrapper>
               <ServiceBox
                 icon="monitor"
-                title="Web Design"
-                subtitle="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore."
+                title="Student-First Workflows"
+                subtitle="Multilingual onboarding, AI-powered chat, and mobile-first experiences that delight modern students."
               />
             </ServiceBoxWrapper>
             <ServiceBoxWrapper>
               <ServiceBox
-                icon="browser"
-                title="Development"
-                subtitle="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat."
+                icon="roller"
+                title="Partnership Approach"
+                subtitle="We work alongside your teams, tailoring technology solutions to match your institutional realities."
               />
             </ServiceBoxWrapper>
             <ServiceBoxWrapper>
-              <ServiceBox icon="printer" title="Print" subtitle="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor." />
+              <ServiceBox 
+                icon="printer" 
+                title="AI & Automation" 
+                subtitle="Intelligent chatbots, automated teaching assistants, and language companions to increase efficiency." 
+              />
             </ServiceBoxWrapper>
           </ServiceBoxRow>
         </div>
@@ -59,18 +63,15 @@ export default function Services() {
           <div className="container">
             <Advertising className="flexSpaceCenter">
               <AddLeft>
-                <h4 className="font15 semiBold">A few words about company</h4>
-                <h2 className="font40 extraBold">A Study of Creativity</h2>
+                <h4 className="font15 semiBold">Ready to Transform Your University?</h4>
+                <h2 className="font40 extraBold">Explore Our Solutions</h2>
                 <p className="font12">
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-                  diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                  Discover how our custom digital solutions can revolutionize your university's operations, 
+                  enhance student experiences, and future-proof your institution for the digital age.
                 </p>
                 <ButtonsRow className="flexNullCenter" style={{ margin: "30px 0"}}>
-                  <div style={{ width: "190px" }}>
-                    <FullButton title="Get Started" action={() => alert("clicked")} />
-                  </div>
-                  <div style={{ width: "190px", marginLeft: "15px" }}>
-                    <FullButton title="Contact Us" action={() => alert("clicked")} border />
+                  <div style={{ width: "200px" }}>
+                    <FullButton title="Explore Our Solutions" action={() => alert("clicked")} />
                   </div>
                 </ButtonsRow>
               </AddLeft>
