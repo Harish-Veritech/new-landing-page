@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+// Components
+import FullButton from "../Buttons/FullButton";
 // Assets
 import ContactImg1 from "../../assets/img/contact-1.png";
 import ContactImg2 from "../../assets/img/contact-2.png";
@@ -11,40 +13,47 @@ export default function Contact() {
       <div className="lightBg">
         <div className="container">
           <HeaderInfo>
-            <h1 className="font40 extraBold">Let's get in touch</h1>
+            <h1 className="font40 extraBold">Ready to Transform Your University?</h1>
             <p className="font13">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+              Get in touch with our experts to discuss how ABM Technologies can help
               <br />
-              labore et dolore magna aliquyam erat, sed diam voluptua.
+              revolutionize your university's digital infrastructure and student experience.
             </p>
           </HeaderInfo>
           <div className="row" style={{ paddingBottom: "30px" }}>
             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
               <Form>
-                <label className="font13">First name:</label>
-                <input type="text" id="fname" name="fname" className="font20 extraBold" />
+                <label className="font13">University/Institution Name:</label>
+                <input type="text" id="institution" name="institution" className="font20 extraBold" />
+                <label className="font13">Contact Person:</label>
+                <input type="text" id="contact" name="contact" className="font20 extraBold" />
                 <label className="font13">Email:</label>
-                <input type="text" id="email" name="email" className="font20 extraBold" />
-                <label className="font13">Subject:</label>
-                <input type="text" id="subject" name="subject" className="font20 extraBold" />
-                <textarea rows="4" cols="50" type="text" id="message" name="message" className="font20 extraBold" />
+                <input type="email" id="email" name="email" className="font20 extraBold" />
+                <label className="font13">Phone:</label>
+                <input type="tel" id="phone" name="phone" className="font20 extraBold" />
+                <label className="font13">Tell us about your digital transformation needs:</label>
+                <textarea rows="4" cols="50" id="message" name="message" className="font20 extraBold" placeholder="Describe your current challenges and what you hope to achieve..." />
               </Form>
               <SumbitWrapper className="flex">
-                <ButtonInput type="submit" value="Send Message" className="pointer animate radius8" style={{ maxWidth: "220px" }} />
+                <div style={{ width: "220px" }}>
+                  <FullButton title="Request Consultation" action={() => alert("Consultation requested!")} />
+                </div>
               </SumbitWrapper>
             </div>
             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 flex">
               <div style={{ width: "50%" }} className="flexNullCenter flexColumn">
                 <ContactImgBox>
-                  <img src={ContactImg1} alt="office" className="radius6" />
+                  <img src={ContactImg1} alt="Modern Office Environment" />
                 </ContactImgBox>
                 <ContactImgBox>
-                  <img src={ContactImg2} alt="office" className="radius6" />
+                  <img src={ContactImg2} alt="Team Collaboration Space" />
                 </ContactImgBox>
               </div>
               <div style={{ width: "50%" }}>
                 <div style={{ marginTop: "100px" }}>
-                  <img src={ContactImg3} alt="office" className="radius6" />
+                  <ContactImgBoxLarge>
+                    <img src={ContactImg3} alt="Innovative Technology Solutions" />
+                  </ContactImgBoxLarge>
                 </div>
               </div>
             </div>
@@ -84,27 +93,116 @@ const Form = styled.form`
     padding: 30px 0;
   }
 `;
-const ButtonInput = styled.input`
-  border: 1px solid #7620ff;
-  background-color: #7620ff;
-  width: 100%;
-  padding: 15px;
-  outline: none;
-  color: #fff;
-  :hover {
-    background-color: #580cd2;
-    border: 1px solid #7620ff;
-    color: #fff;
-  }
-  @media (max-width: 991px) {
-    margin: 0 auto;
-  }
-`;
 const ContactImgBox = styled.div`
   max-width: 180px; 
   align-self: flex-end; 
   margin: 10px 30px 10px 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(118, 32, 255, 0.1) 0%, rgba(88, 12, 210, 0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+    border-radius: inherit;
+  }
+  
+  &:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 25px 50px rgba(118, 32, 255, 0.25);
+  }
+  
+  &:hover::before {
+    opacity: 1;
+  }
+  
+  img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
+    filter: brightness(0.95) contrast(1.05);
+  }
+  
+  &:hover img {
+    filter: brightness(1.05) contrast(1.1) saturate(1.1);
+    transform: scale(1.05);
+  }
+  
+  @media (max-width: 860px) {
+    margin: 10px auto;
+    align-self: center;
+  }
 `;
+const ContactImgBoxLarge = styled.div`
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(118, 32, 255, 0.1) 0%, rgba(88, 12, 210, 0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+    border-radius: inherit;
+  }
+  
+  &:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(118, 32, 255, 0.25);
+  }
+  
+  &:hover::before {
+    opacity: 1;
+  }
+  
+  img {
+    width: 278px;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
+    filter: brightness(0.95) contrast(1.05);
+  }
+  
+  &:hover img {
+    filter: brightness(1.05) contrast(1.1) saturate(1.1);
+    transform: scale(1.05);
+  }
+  
+  @media (max-width: 860px) {
+    margin: 20px auto;
+    text-align: center;
+    
+    img {
+      width: 100%;
+      max-width: 278px;
+      height: auto;
+    }
+  }
+`;
+
 const SumbitWrapper = styled.div`
   @media (max-width: 991px) {
     width: 100%;

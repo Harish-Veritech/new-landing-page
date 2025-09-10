@@ -12,7 +12,7 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
         <div className="flexNullCenter">
           <LogoIcon />
           <h1 className="whiteColor font20" style={{ marginLeft: "15px" }}>
-            fanatic
+            ABM Technologies
           </h1>
         </div>
         <CloseBtn onClick={() => toggleSidebar(!sidebarOpen)} className="animate pointer">
@@ -41,12 +41,26 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
             activeClass="active"
             className="whiteColor"
             style={{ padding: "10px 15px" }}
+            to="why-abm"
+            spy={true}
+            smooth={true}
+            offset={-60}
+          >
+            Why ABM
+          </Link>
+        </li>
+        <li className="semiBold font15 pointer">
+          <Link
+            onClick={() => toggleSidebar(!sidebarOpen)}
+            activeClass="active"
+            className="whiteColor"
+            style={{ padding: "10px 15px" }}
             to="services"
             spy={true}
             smooth={true}
             offset={-60}
           >
-            Services
+            Solutions
           </Link>
         </li>
         <li className="semiBold font15 pointer">
@@ -55,12 +69,12 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
             activeClass="active"
             className="whiteColor"
             style={{ padding: "10px 15px" }}
-            to="projects"
+            to="tech-stack"
             spy={true}
             smooth={true}
             offset={-60}
           >
-            Projects
+            Technology
           </Link>
         </li>
         <li className="semiBold font15 pointer">
@@ -69,26 +83,12 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
             activeClass="active"
             className="whiteColor"
             style={{ padding: "10px 15px" }}
-            to="blog"
+            to="compliance"
             spy={true}
             smooth={true}
             offset={-60}
           >
-            Blog
-          </Link>
-        </li>
-        <li className="semiBold font15 pointer">
-          <Link
-            onClick={() => toggleSidebar(!sidebarOpen)}
-            activeClass="active"
-            className="whiteColor"
-            style={{ padding: "10px 15px" }}
-            to="pricing"
-            spy={true}
-            smooth={true}
-            offset={-60}
-          >
-            Pricing
+            Compliance
           </Link>
         </li>
         <li className="semiBold font15 pointer">
@@ -108,13 +108,13 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
       </UlStyle>
       <UlStyle className="flexSpaceCenter">
         <li className="semiBold font15 pointer">
-          <a href="/" style={{ padding: "10px 30px 10px 0" }} className="whiteColor">
-            Log in
+          <a href="mailto:hello@abmtechnologies.com" style={{ padding: "10px 30px 10px 0" }} className="whiteColor">
+            Contact Us
           </a>
         </li>
         <li className="semiBold font15 pointer flexCenter">
-          <a href="/" className="radius8 lightBg" style={{ padding: "10px 15px" }}>
-            Get Started
+          <a href="#contact" className="radius8 lightBg" style={{ padding: "10px 15px" }}>
+            Schedule Demo
           </a>
         </li>
       </UlStyle>
