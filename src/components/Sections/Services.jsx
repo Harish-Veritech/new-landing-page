@@ -5,10 +5,10 @@ import ClientSlider from "../Elements/ClientSlider";
 import ServiceBox from "../Elements/ServiceBox";
 import FullButton from "../Buttons/FullButton";
 // Assets
-import AddImage1 from "../../assets/img/services/service-1.png";
-import AddImage2 from "../../assets/img/services/service-2.png";
-import AddImage3 from "../../assets/img/services/service-3.png";
-import AddImage4 from "../../assets/img/services/service-4.png";
+import AddImage1 from "../../assets/img/services/service-1.webp";
+import AddImage2 from "../../assets/img/services/service-2.webp";
+import AddImage3 from "../../assets/img/services/service-3.webp";
+import AddImage4 from "../../assets/img/services/service-4.webp";
 
 export default function Services() {
   return (

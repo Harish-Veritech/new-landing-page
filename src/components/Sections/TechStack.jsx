@@ -2,11 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import AnimatedSection from "../Elements/AnimatedSection";
 // Import your tech images here when ready
-import CloudIcon from "../../assets/img/techstacks/stack-1.png";
-import LMSIcon from "../../assets/img/techstacks/stack-2.png";
-import CustomIcon from "../../assets/img/techstacks/stack-3.png";
-import DatabaseIcon from "../../assets/img/techstacks/stack-4.png";
-import WebIcon from "../../assets/img/techstacks/stack-5.png";
+import CloudIcon from "../../assets/img/techstacks/stack-1.webp";
+import LMSIcon from "../../assets/img/techstacks/stack-2.webp";
+import CustomIcon from "../../assets/img/techstacks/stack-3.webp";
+import DatabaseIcon from "../../assets/img/techstacks/stack-4.webp";
+import WebIcon from "../../assets/img/techstacks/stack-5.webp";
 
 export default function TechStack() {
   return (

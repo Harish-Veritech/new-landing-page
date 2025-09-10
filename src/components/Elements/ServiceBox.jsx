@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 // Assets - Solution Images
-import Solution1 from "../../assets/img/solutions/solution-1.png";
-import Solution2 from "../../assets/img/solutions/solution-2.png";
-import Solution3 from "../../assets/img/solutions/solution-3.png";
-import Solution4 from "../../assets/img/solutions/solution-4.png";
+import Solution1 from "../../assets/img/solutions/solution-1.webp";
+import Solution2 from "../../assets/img/solutions/solution-2.webp";
+import Solution3 from "../../assets/img/solutions/solution-3.webp";
+import Solution4 from "../../assets/img/solutions/solution-4.webp";
 
 export default function ServiceBox({icon, title, subtitle}) {
   let getIcon;

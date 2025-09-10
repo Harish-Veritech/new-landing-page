@@ -3,9 +3,9 @@ import styled from "styled-components";
 // Components
 import FullButton from "../Buttons/FullButton";
 // Assets
-import ContactImg1 from "../../assets/img/contact-1.png";
-import ContactImg2 from "../../assets/img/contact-2.png";
-import ContactImg3 from "../../assets/img/contact-3.png";
+import ContactImg1 from "../../assets/img/contact-1.webp";
+import ContactImg2 from "../../assets/img/contact-2.webp";
+import ContactImg3 from "../../assets/img/contact-3.webp";
 
 export default function Contact() {
   return (
