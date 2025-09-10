@@ -1,16 +1,8 @@
 import * as React from "react";
 
-function SvgComponent(props) {
+function SvgComponent({ height = 30, width = 155, ...props}) {
   return (
-    // <svg xmlns="http://www.w3.org/2000/svg" width={27} height={40} viewBox="0 0 27 40" {...props}>
-    //   <g data-name="Group 101" transform="translate(-375 -21)">
-    //     <rect data-name="Rectangle 16" width={13} height={8} rx={4} transform="translate(375 53)" fill="#f40051" />
-    //     <rect data-name="Rectangle 11" width={20} height={8} rx={4} transform="translate(382 21)" fill="#f2b300" />
-    //     <rect data-name="Rectangle 15" width={20} height={8} rx={4} transform="translate(382 37)" fill="#7620ff" />
-    //     <rect data-name="Rectangle 12" width={8} height={8} rx={4} transform="translate(375 29)" fill="#4cd5c5" />
-    //   </g>
-    // </svg>
-    <svg xmlns="http://www.w3.org/2000/svg" width="155" height="43" viewBox="0 0 155 43" fill="none">
+    <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 155 43" fill="none" {...props}>
     <path d="M21 42C20.2276 41.3791 19.5484 40.7064 19 40C19.9438 41.2275 20.9984 41.999 21 42Z" fill="url(#paint0_linear_5410_21345)"/>
     <path d="M50.5527 28.1075C50.5527 28.1075 49.374 25.4996 49.1307 25.2023C47.8923 23.6899 46.1611 23.0028 44.5687 23C43.9978 23.0222 43.5262 23.0871 43.1143 23.2019C43.058 23.2186 43.001 23.2325 42.9465 23.251C42.9079 23.2639 42.8701 23.2788 42.8323 23.2926C42.7269 23.3315 42.6242 23.3723 42.5232 23.4186C42.4898 23.4343 42.4564 23.4492 42.423 23.4658C42.3413 23.5057 42.2623 23.5501 42.1841 23.5946C42.1297 23.626 42.0752 23.6557 42.0216 23.6899C41.9127 23.7594 41.8056 23.8316 41.7054 23.9113C41.0186 24.4345 35.3965 30.232 34.1335 31.5378C34.0483 31.6295 34 31.6813 34 31.6813L37.1602 38.9642C38.2045 40.6479 39.897 41.6388 42.1789 42H56L50.5527 28.1075Z" fill="url(#paint1_linear_5410_21345)"/>
     <path d="M30.9433 4.50863C29.8293 6.7284 28.7152 9.38787 27 13.2897C28.1877 15.5538 30.3053 17.0169 33.6289 16.9999H47L40.8204 3.09667C39.8408 1.32 38.1587 0.877745 36.2538 1.02687C36.1599 1.0388 36.0687 1.05754 35.9767 1.06777C31.8253 1.53643 30.9433 4.50863 30.9433 4.50863Z" fill="url(#paint2_linear_5410_21345)"/>

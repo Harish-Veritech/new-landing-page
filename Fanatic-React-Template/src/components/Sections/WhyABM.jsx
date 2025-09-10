@@ -10,6 +10,9 @@ export default function WhyABM() {
           <AnimatedSection direction="up">
             <HeaderInfo>
               <h1 className="font40 extraBold">Trusted by Global Institutions</h1>
+              <p className="font16" style={{ marginTop: '20px', color: '#666', maxWidth: '800px', margin: '20px auto 0' }}>
+                With over a decade of experience transforming digital ecosystems, ABM Technologies has become the trusted partner for universities and institutions worldwide. Our proven track record, deep technical expertise, and commitment to excellence make us the ideal choice for your digital transformation journey.
+              </p>
             </HeaderInfo>
           </AnimatedSection>
           <TrustGrid className="flex">
@@ -17,7 +20,7 @@ export default function WhyABM() {
               <TrustItem>
                 <CheckIcon>✓</CheckIcon>
                 <TrustText>
-                  <strong>500+ Global Projects</strong> in Education, Finance, Healthcare, SaaS
+                  <strong>500+ Global Projects</strong> across Education, Finance, Healthcare, and SaaS sectors. Our extensive portfolio includes digital transformations for major universities, financial institutions, healthcare systems, and technology companies worldwide, demonstrating our ability to deliver complex, mission-critical solutions at scale.
                 </TrustText>
               </TrustItem>
             </AnimatedSection>
@@ -25,7 +28,7 @@ export default function WhyABM() {
               <TrustItem>
                 <CheckIcon>✓</CheckIcon>
                 <TrustText>
-                  <strong>Proven Scalable, Secure Solutions</strong>
+                  <strong>Proven Scalable, Secure Solutions</strong> built with enterprise-grade security, compliance standards, and performance optimization. Our solutions handle millions of users, process vast amounts of data, and maintain 99.9% uptime while meeting strict security requirements including GDPR, FERPA, and SOC 2 compliance.
                 </TrustText>
               </TrustItem>
             </AnimatedSection>
@@ -33,7 +36,7 @@ export default function WhyABM() {
               <TrustItem>
                 <CheckIcon>✓</CheckIcon>
                 <TrustText>
-                  <strong>Deep Expertise</strong> in Custom Integrations
+                  <strong>Deep Expertise in Custom Integrations</strong> with 15+ years of experience connecting disparate systems, APIs, and platforms. We specialize in seamless integration of LMS, CRM, SIS, payment gateways, and third-party services, ensuring your technology ecosystem works as one unified, intelligent platform.
                 </TrustText>
               </TrustItem>
             </AnimatedSection>
@@ -41,7 +44,7 @@ export default function WhyABM() {
               <TrustItem>
                 <CheckIcon>✓</CheckIcon>
                 <TrustText>
-                  <strong>71% of Top 100 Universities</strong> Use Drupal – Industry's Leading Open-Source Platform
+                  <strong>71% of Top 100 Universities</strong> trust Drupal as their content management platform. We're certified Drupal experts with deep knowledge of the platform's capabilities, security features, and scalability options, ensuring your institution benefits from the industry's most robust and flexible open-source solution.
                 </TrustText>
               </TrustItem>
             </AnimatedSection>
@@ -86,11 +89,15 @@ const HeaderInfo = styled.div`
 
 const TrustGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
-  @media (max-width: 860px) {
+  max-width: 1200px;
+  margin: 0 auto;
+  
+  @media (max-width: 960px) {
     grid-template-columns: 1fr;
     gap: 20px;
+    max-width: 100%;
   }
 `;
 

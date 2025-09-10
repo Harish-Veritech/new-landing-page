@@ -88,7 +88,7 @@ const ComplianceList = styled.div`
 
 const ComplianceItem = styled.div`
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 15px;
   margin-bottom: 25px;
   padding: 20px;

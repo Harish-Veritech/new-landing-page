@@ -1,6 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import AnimatedSection from "../Elements/AnimatedSection";
+// Import your tech images here when ready
+import CloudIcon from "../../assets/img/techstacks/stack-1.png";
+import LMSIcon from "../../assets/img/techstacks/stack-2.png";
+import CustomIcon from "../../assets/img/techstacks/stack-3.png";
+import DatabaseIcon from "../../assets/img/techstacks/stack-4.png";
+import WebIcon from "../../assets/img/techstacks/stack-5.png";
 
 export default function TechStack() {
   return (
@@ -15,35 +21,45 @@ export default function TechStack() {
           <TechGrid className="flex">
             <AnimatedSection direction="up" delay={100}>
               <TechItem>
-                <TechIcon>☁️</TechIcon>
+                <TechIcon>
+                  <img src={CloudIcon} alt="Cloud Infrastructure" />
+                </TechIcon>
                 <TechTitle>Cloud Infrastructure</TechTitle>
                 <TechDescription>Scalable, reliable deployments</TechDescription>
               </TechItem>
             </AnimatedSection>
             <AnimatedSection direction="up" delay={200}>
               <TechItem>
-                <TechIcon>💻</TechIcon>
+                <TechIcon>
+                  <img src={LMSIcon} alt="Learning Management System" />
+                </TechIcon>
                 <TechTitle>Learning Management System</TechTitle>
                 <TechDescription>Blackboard, Canvas, Moodle integrations</TechDescription>
               </TechItem>
             </AnimatedSection>
             <AnimatedSection direction="up" delay={300}>
               <TechItem>
-                <TechIcon>⚙️</TechIcon>
+                <TechIcon>
+                  <img src={CustomIcon} alt="Custom Tech Stack" />
+                </TechIcon>
                 <TechTitle>Custom Tech Stack</TechTitle>
                 <TechDescription>Tailored solutions built for your institution</TechDescription>
               </TechItem>
             </AnimatedSection>
             <AnimatedSection direction="up" delay={400}>
               <TechItem>
-                <TechIcon>🗄️</TechIcon>
+                <TechIcon>
+                  <img src={DatabaseIcon} alt="Databases" />
+                </TechIcon>
                 <TechTitle>Databases</TechTitle>
                 <TechDescription>Secure, high-performance data management</TechDescription>
               </TechItem>
             </AnimatedSection>
             <AnimatedSection direction="up" delay={500}>
               <TechItem>
-                <TechIcon>🌐</TechIcon>
+                <TechIcon>
+                  <img src={WebIcon} alt="Web Frameworks" />
+                </TechIcon>
                 <TechTitle>Web Frameworks</TechTitle>
                 <TechDescription>Flexible and modern development frameworks</TechDescription>
               </TechItem>
@@ -98,6 +114,7 @@ const TechGrid = styled.div`
 `;
 
 const TechItem = styled.div`
+  height: 100%;
   text-align: center;
   padding: 30px 20px;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 249, 250, 0.8) 100%);
@@ -149,14 +166,26 @@ const TechItem = styled.div`
 `;
 
 const TechIcon = styled.div`
-  font-size: 48px;
   margin-bottom: 20px;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
   transition: all 0.3s ease;
+  
+  img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+    /* Remove white background and blend with card */
+    background: transparent;
+    mix-blend-mode: multiply;
+    filter: contrast(1.2) brightness(1.1);
+  }
   
   ${TechItem}:hover & {
     transform: scale(1.3) rotate(10deg);
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
   }
 `;
 
