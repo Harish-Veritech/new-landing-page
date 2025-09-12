@@ -110,7 +110,22 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
           </a>
         </li>
         <li className="semiBold font15 pointer flexCenter">
-          <a href="#contact" className="radius8 lightBg" style={{ padding: "10px 15px" }}>
+          <a 
+            href="https://calendly.com/meet-abmtechnologies/30min" 
+            className="radius8 lightBg" 
+            style={{ padding: "10px 15px" }}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => {
+              if (typeof window !== 'undefined' && window.gtag) {
+                window.gtag('event', 'click', {
+                  event_category: 'Button',
+                  event_label: 'Schedule Demo - Sidebar',
+                  value: 1
+                });
+              }
+            }}
+          >
             Schedule Demo
           </a>
         </li>

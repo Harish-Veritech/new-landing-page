@@ -15,7 +15,11 @@ export default function FinalCTA() {
             </p>
             <ButtonRow className="flexCenter">
               <ButtonWrapper>
-                <FullButton title="Schedule a Demo" />
+                <FullButton 
+                  title="Schedule a Demo" 
+                  href="https://calendly.com/meet-abmtechnologies/30min" 
+                  trackingEvent="Schedule Demo - Final CTA"
+                />
               </ButtonWrapper>
               <ButtonWrapper>
                 <FullButton title="Contact Us" border />

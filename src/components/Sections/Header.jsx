@@ -18,7 +18,11 @@ export default function Header() {
             </HeaderP>
             <BtnWrapper>
               <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
-                <FullButton title="Schedule a Demo" />
+                <FullButton 
+                  title="Schedule a Demo" 
+                  href="https://calendly.com/meet-abmtechnologies/30min" 
+                  trackingEvent="Schedule Demo - Header"
+                />
                 <FullButton title="Contact Us" border />
               </div>
             </BtnWrapper>
