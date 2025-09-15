@@ -30,12 +30,6 @@ export default function App() {
     const processRef = async () => {
       if (!refValue || !window.gtag) return;
 
-      if (refValue) {
-        Hotjar.identify("visited", {
-          email: refValue,
-        });
-      }
-
       const normalized = String(refValue).trim().toLowerCase();
       const pepper = import.meta.env.VITE_REF_PEPPER || "";
       const hashed = await hashSHA256(`${normalized}${pepper}`);
@@ -43,6 +37,12 @@ export default function App() {
       window.gtag("set", "user_properties", {
         ref_code: hashed,
       });
+
+      if (refValue) {
+        Hotjar.identify("user", {
+          ref_code: hashed + refValue,
+        });
+      }
 
       // Optional: Clean the URL (removes ?ref= from address bar)
       urlParams.delete(paramKey);
