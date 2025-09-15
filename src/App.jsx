@@ -38,11 +38,12 @@ export default function App() {
         ref_code: hashed,
       });
 
-      if (refValue) {
+      const ref = refValue;
+      setTimeout(() => {
         Hotjar.identify(hashed, {
-          ref_code: hashed + refValue,
+          email: ref,
         });
-      }
+      }, 500);
 
       // Optional: Clean the URL (removes ?ref= from address bar)
       urlParams.delete(paramKey);
