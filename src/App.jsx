@@ -39,7 +39,7 @@ export default function App() {
       });
 
       if (refValue) {
-        Hotjar.identify("user", {
+        Hotjar.identify(hashed, {
           ref_code: hashed + refValue,
         });
       }
