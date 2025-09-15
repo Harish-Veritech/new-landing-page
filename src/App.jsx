@@ -7,19 +7,43 @@ export default function App() {
   useEffect(() => {
     const paramKey = 'ref';
     const urlParams = new URLSearchParams(window.location.search);
-    const email = urlParams.get(paramKey);
+    const refValue = urlParams.get(paramKey);
 
-    if (email && window.gtag) {
-      // Send email as user_property to GA4
+    const toHex = (buffer) => {
+      const bytes = new Uint8Array(buffer);
+      let hex = '';
+      for (let i = 0; i < bytes.length; i++) {
+        const current = bytes[i].toString(16).padStart(2, '0');
+        hex += current;
+      }
+      return hex;
+    };
+
+    const hashSHA256 = async (text) => {
+      const encoder = new TextEncoder();
+      const data = encoder.encode(text);
+      const hashBuffer = await window.crypto.subtle.digest('SHA-256', data);
+      return toHex(hashBuffer);
+    };
+
+    const processRef = async () => {
+      if (!refValue || !window.gtag) return;
+
+      const normalized = String(refValue).trim().toLowerCase();
+      const pepper = import.meta.env.VITE_REF_PEPPER || '';
+      const hashed = await hashSHA256(`${normalized}${pepper}`);
+
       window.gtag('set', 'user_properties', {
-        ref_email: email,
+        ref_code: hashed,
       });
 
-      // Optional: Clean the URL (removes ?ref=email from address bar)
+      // Optional: Clean the URL (removes ?ref= from address bar)
       urlParams.delete(paramKey);
       const newUrl = window.location.pathname + (urlParams.toString() ? '?' + urlParams.toString() : '');
       window.history.replaceState({}, document.title, newUrl);
-    }
+    };
+
+    processRef();
   }, []);
   return (
     <>
