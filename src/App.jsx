@@ -30,6 +30,12 @@ export default function App() {
     const processRef = async () => {
       if (!refValue || !window.gtag) return;
 
+      if (refValue) {
+        Hotjar.identify("visited", {
+          email: refValue,
+        });
+      }
+
       const normalized = String(refValue).trim().toLowerCase();
       const pepper = import.meta.env.VITE_REF_PEPPER || "";
       const hashed = await hashSHA256(`${normalized}${pepper}`);
@@ -53,8 +59,8 @@ export default function App() {
       Hotjar.init(siteId, hotjarVersion);
     };
 
-    processRef();
     initHotJar();
+    processRef();
   }, []);
   return (
     <>
