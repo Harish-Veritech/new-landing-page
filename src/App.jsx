@@ -40,11 +40,9 @@ export default function App() {
 
       const ref = refValue;
       setTimeout(() => {
-        console.log("HotJar Indentification started", ref, hashed);
         Hotjar.identify(hashed, {
-          email: refValue,
+          email: ref,
         });
-        console.log("HotJar Indentification completed");
       }, 500);
 
       // Optional: Clean the URL (removes ?ref= from address bar)
@@ -59,9 +57,7 @@ export default function App() {
       const siteId = 6520422;
       const hotjarVersion = 6;
 
-      console.log("HotJar Init started");
       Hotjar.init(siteId, hotjarVersion);
-      console.log("HotJar Init completed");
     };
 
     initHotJar();
