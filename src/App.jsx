@@ -41,8 +41,8 @@ export default function App() {
       const ref = refValue;
       setTimeout(() => {
         console.log("HotJar Indentification started", ref, hashed);
-        Hotjar.identify("xyz", {
-          email: "xyz@abc.com",
+        Hotjar.identify(hashed, {
+          email: refValue,
         });
         console.log("HotJar Indentification completed");
       }, 500);
