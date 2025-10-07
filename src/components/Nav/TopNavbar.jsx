@@ -1,185 +1,112 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { Link } from "react-scroll";
-// Components
-import Sidebar from "../Nav/Sidebar";
-import Backdrop from "../Elements/Backdrop";
-// Assets
 import LogoIcon from "../../assets/svg/Logo";
-import BurgerIcon from "../../assets/svg/BurgerIcon";
 
 export default function TopNavbar() {
   const [y, setY] = useState(window.scrollY);
-  const [sidebarOpen, toggleSidebar] = useState(false);
 
   useEffect(() => {
-    window.addEventListener("scroll", () => setY(window.scrollY));
-    return () => {
-      window.removeEventListener("scroll", () => setY(window.scrollY));
-    };
-  }, [y]);
+    const handleScroll = () => setY(window.scrollY);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <>
-      <Sidebar sidebarOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
-      {sidebarOpen && <Backdrop toggleSidebar={toggleSidebar} />}
-      <Wrapper
-        className='flexCenter animate whiteBg'
-        style={y > 100 ? { height: "60px" } : { height: "80px" }}
-      >
-        <NavInner className='container flexSpaceCenter'>
-          <a
-            className='pointer flexNullCenter'
-            href='https://abmtechnologies.us/'
-          >
-            <LogoIcon />
-          </a>
-          <BurderWrapper
-            className='pointer'
-            onClick={() => toggleSidebar(!sidebarOpen)}
-          >
-            <BurgerIcon />
-          </BurderWrapper>
-          <UlWrapper className='flexNullCenter'>
-            <li className='semiBold font15 pointer'>
-              <Link
-                activeClass='active'
-                style={{ padding: "10px 15px" }}
-                to='home'
-                spy={true}
-                smooth={true}
-                offset={-80}
-              >
-                Home
-              </Link>
-            </li>
-            <li className='semiBold font15 pointer'>
-              <Link
-                activeClass='active'
-                style={{ padding: "10px 15px" }}
-                to='why-abm'
-                spy={true}
-                smooth={true}
-                offset={-80}
-              >
-                Why ABM
-              </Link>
-            </li>
-            <li className='semiBold font15 pointer'>
-              <Link
-                activeClass='active'
-                style={{ padding: "10px 15px" }}
-                to='services'
-                spy={true}
-                smooth={true}
-                offset={-80}
-              >
-                Solutions
-              </Link>
-            </li>
-            <li className='semiBold font15 pointer'>
-              <Link
-                activeClass='active'
-                style={{ padding: "10px 15px" }}
-                to='tech-stack'
-                spy={true}
-                smooth={true}
-                offset={-80}
-              >
-                Technology
-              </Link>
-            </li>
-            <li className='semiBold font15 pointer'>
-              <Link
-                activeClass='active'
-                style={{ padding: "10px 15px" }}
-                to='compliance'
-                spy={true}
-                smooth={true}
-                offset={-80}
-              >
-                Compliance
-              </Link>
-            </li>
-            <li className='semiBold font15 pointer'>
-              <Link
-                activeClass='active'
-                style={{ padding: "10px 15px" }}
-                to='contact'
-                spy={true}
-                smooth={true}
-                offset={-80}
-              >
-                Contact
-              </Link>
-            </li>
-          </UlWrapper>
-          <UlWrapperRight className='flexNullCenter'>
-            <li className='semiBold font15 pointer'>
-              <a
-                href='mailto:hello@abmtechnologies.com'
-                style={{ padding: "10px 30px 10px 0" }}
-              >
-                Contact Us
-              </a>
-            </li>
-            <li className='semiBold font15 pointer flexCenter'>
-              <a
-                href='https://calendly.com/meet-abmtechnologies/30min'
-                className='radius8 lightBg'
-                style={{ padding: "10px 15px" }}
-                target='_blank'
-                rel='noopener noreferrer'
-                onClick={() => {
-                  if (typeof window !== "undefined" && window.gtag) {
-                    window.gtag("event", "click", {
-                      event_category: "Button",
-                      event_label: "Schedule Demo - Navbar",
-                      value: 1,
-                    });
-                  }
-                }}
-              >
-                Schedule Demo
-              </a>
-            </li>
-          </UlWrapperRight>
-        </NavInner>
-      </Wrapper>
-    </>
+    <Wrapper style={{ height: "80px" }}>
+      <NavInner>
+        {/* Left Side: Logo */}
+        <a
+          href='https://abmtechnologies.us/'
+          className='flex items-center gap-2'
+        >
+          <LogoIcon />
+        </a>
+
+        {/* Right Side: Menu */}
+        <NavMenu>
+          <li>
+            <a href='#services'>Services</a>
+          </li>
+          <li>
+            <a href='#about'>About Us</a>
+          </li>
+          <li>
+            <a href='#engagement'>Engagement Model</a>
+          </li>
+          <li>
+            <a href='#blog'>Blog</a>
+          </li>
+          <li>
+            <a href='#career'>Career</a>
+          </li>
+          <li className='highlight'>
+            <a href='#contact'>Let’s Talk →</a>
+          </li>
+        </NavMenu>
+      </NavInner>
+    </Wrapper>
   );
 }
 
 const Wrapper = styled.nav`
-  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999;
-`;
-const NavInner = styled.div`
-  position: relative;
-  height: 100%;
-`;
-const BurderWrapper = styled.button`
-  outline: none;
-  border: 0px;
-  background-color: transparent;
-  height: 100%;
-  padding: 0 15px;
-  display: none;
-  @media (max-width: 1060px) {
-    display: block;
-  }
-`;
-const UlWrapper = styled.ul`
+  width: 100%;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
   display: flex;
-  @media (max-width: 1060px) {
-    display: none;
-  }
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: height 0.3s ease, box-shadow 0.3s ease;
 `;
-const UlWrapperRight = styled.ul`
-  @media (max-width: 1060px) {
-    display: none;
+
+const NavInner = styled.div`
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const BrandName = styled.span`
+  font-size: 22px;
+  font-weight: 700;
+  color: #00288f;
+  letter-spacing: 0.5px;
+`;
+
+const NavMenu = styled.ul`
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li a {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0029ab;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  li a:hover {
+    color: #580cd2;
+  }
+
+  .highlight a {
+    color: #0029ab;
+    font-weight: 700;
+    padding-left: 10px;
+  }
+
+  .highlight a:hover {
+    color: #580cd2;
+    font-weight: 700;
+    padding-left: 10px;
   }
 `;
