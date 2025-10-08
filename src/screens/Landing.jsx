@@ -9,23 +9,21 @@ import Compliance from "../components/Sections/Compliance";
 import Risks from "../components/Sections/Risks";
 import FinalCTA from "../components/Sections/FinalCTA";
 import Contact from "../components/Sections/Contact";
-import Footer from "../components/Sections/Footer"
+import Footer from "../components/Sections/Footer";
 
 export default function Landing() {
   return (
     <>
       <TopNavbar />
       <Header />
-      <WhyABM />
+      {/* <WhyABM /> */}
       <Services />
       <TechStack />
-      <Compliance />
-      <Risks />
-      <FinalCTA />
-      <Contact />
+      {/* <Compliance /> */}
+      {/* <Risks /> */}
+      {/* <FinalCTA /> */}
+      {/* <Contact /> */}
       <Footer />
     </>
   );
 }
-
-

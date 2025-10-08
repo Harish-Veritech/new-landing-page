@@ -1,28 +1,39 @@
 import React from "react";
 import styled from "styled-components";
-import FullButton from "../Buttons/FullButton";
+import Button from "../Buttons/Button";
 
 export default function FinalCTA() {
   return (
-    <Wrapper id="final-cta">
-      <div className="darkBg" style={{ padding: "80px 0" }}>
-        <div className="container">
+    <Wrapper id='final-cta'>
+      <div className='darkBg' style={{ padding: "80px 0" }}>
+        <div className='container'>
           <CTAContent>
-            <h1 className="font40 extraBold whiteColor">Let's Build the Future of Higher Education Together</h1>
-            <p className="font16 whiteColor" style={{ margin: "30px 0 50px 0", maxWidth: "600px", marginLeft: "auto", marginRight: "auto" }}>
-              Ready to transform your university with cutting-edge digital solutions? 
-              Schedule a demo or contact us to get started on your digital transformation journey.
+            <h1 className='font40 extraBold whiteColor'>
+              Let's Build the Future of Higher Education Together
+            </h1>
+            <p
+              className='font16 whiteColor'
+              style={{
+                margin: "30px 0 50px 0",
+                maxWidth: "600px",
+                marginLeft: "auto",
+                marginRight: "auto",
+              }}
+            >
+              Ready to transform your university with cutting-edge digital
+              solutions? Schedule a demo or contact us to get started on your
+              digital transformation journey.
             </p>
-            <ButtonRow className="flexCenter">
+            <ButtonRow className='flexCenter'>
               <ButtonWrapper>
-                <FullButton 
-                  title="Schedule a Demo" 
-                  href="https://calendly.com/meet-abmtechnologies/30min" 
-                  trackingEvent="Schedule Demo - Final CTA"
+                <Button
+                  title='Schedule a Demo'
+                  href='https://calendly.com/meet-abmtechnologies/30min'
+                  trackingEvent='Schedule Demo - Final CTA'
                 />
               </ButtonWrapper>
               <ButtonWrapper>
-                <FullButton title="Contact Us" border />
+                <Button title='Contact Us' border />
               </ButtonWrapper>
             </ButtonRow>
           </CTAContent>

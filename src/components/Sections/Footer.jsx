@@ -1,387 +1,120 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "react-scroll";
-// Assets
-import LogoImg from "../../assets/svg/Logo";
+import { MapPin, Mail, Phone, Linkedin } from "lucide-react";
+import LogoIcon from "../../assets/svg/Logo";
 
-export default function Contact() {
+export default function Footer() {
+  const abmLinks = [
+    { label: "About Us", link: "#" },
+    { label: "Let's Talk", link: "#" },
+    { label: "Blog", link: "#" },
+    { label: "Engagement Model", link: "#" },
+    { label: "Policy Privacy", link: "#" },
+    { label: "Terms of Use", link: "#" },
+  ];
 
-  const getCurrentYear = () => {
-    return new Date().getFullYear();
-  }
-
+  const services = [
+    { label: "Consulting", link: "#" },
+    { label: "Managed Services", link: "#" },
+    { label: "AI Solutions", link: "#" },
+  ];
   return (
-    <Wrapper>
-      <div className="darkBg">
-        <div className="container">
-          <MainFooter>
-            <FooterTop>
-              <FooterColumn>
-                <FooterBrand>
-                  <Link className="flexCenter animate pointer" to="home" smooth={true} offset={-80}>
-                    <LogoImg />
-                  </Link>
-                  <BrandDescription>
-                    Empowering universities with future-ready digital solutions. 
-                    Transform your institution with our comprehensive technology stack.
-                  </BrandDescription>
-                  <SocialLinks>
-                    <SocialLink href="#" aria-label="LinkedIn">
-                      <SocialIcon>💼</SocialIcon>
-                    </SocialLink>
-                    <SocialLink href="#" aria-label="Twitter">
-                      <SocialIcon>🐦</SocialIcon>
-                    </SocialLink>
-                    <SocialLink href="#" aria-label="Facebook">
-                      <SocialIcon>📘</SocialIcon>
-                    </SocialLink>
-                    <SocialLink href="#" aria-label="YouTube">
-                      <SocialIcon>📺</SocialIcon>
-                    </SocialLink>
-                  </SocialLinks>
-                </FooterBrand>
-              </FooterColumn>
+    <footer className='bg-[#0d36b5] text-light'>
+      <div className='max-w-7xl mx-auto px-6 py-14'>
+        <div className='grid md:grid-cols-4 gap-10'>
+          {/* Logo */}
+          <div>
+            <LogoIcon />
+          </div>
 
-              <FooterColumn>
-                <FooterTitle>Solutions</FooterTitle>
-                <FooterList>
-                  <FooterItem>
-                    <Link className="whiteColor animate pointer font13" to="services" smooth={true} offset={-80}>
-                      Digital Ecosystems
-                    </Link>
-                  </FooterItem>
-                  <FooterItem>
-                    <Link className="whiteColor animate pointer font13" to="services" smooth={true} offset={-80}>
-                      Student Workflows
-                    </Link>
-                  </FooterItem>
-                  <FooterItem>
-                    <Link className="whiteColor animate pointer font13" to="tech-stack" smooth={true} offset={-80}>
-                      Technology Stack
-                    </Link>
-                  </FooterItem>
-                  <FooterItem>
-                    <Link className="whiteColor animate pointer font13" to="compliance" smooth={true} offset={-80}>
-                      Compliance & Security
-                    </Link>
-                  </FooterItem>
-                  <FooterItem>
-                    <a href="#" className="whiteColor animate pointer font13">
-                      AI & Automation
-                    </a>
-                  </FooterItem>
-                </FooterList>
-              </FooterColumn>
+          {/* ABM Technologies Links */}
+          <div>
+            <h3 className='font-semibold text-light mb-4'>ABM Technologies</h3>
+            <ul className='space-y-2'>
+              {abmLinks.map((link, index) => (
+                <li key={index}>
+                  <a
+                    href={link.link}
+                    className='text-light/80 hover:text-light transition'
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-              <FooterColumn>
-                <FooterTitle>Company</FooterTitle>
-                <FooterList>
-                  <FooterItem>
-                    <Link className="whiteColor animate pointer font13" to="why-abm" smooth={true} offset={-80}>
-                      Why ABM
-                    </Link>
-                  </FooterItem>
-                  <FooterItem>
-                    <a href="#" className="whiteColor animate pointer font13">
-                      About Us
-                    </a>
-                  </FooterItem>
-                  <FooterItem>
-                    <a href="#" className="whiteColor animate pointer font13">
-                      Our Team
-                    </a>
-                  </FooterItem>
-                  <FooterItem>
-                    <a href="#" className="whiteColor animate pointer font13">
-                      Careers
-                    </a>
-                  </FooterItem>
-                  <FooterItem>
-                    <a href="#" className="whiteColor animate pointer font13">
-                      Case Studies
-                    </a>
-                  </FooterItem>
-                </FooterList>
-              </FooterColumn>
+          {/* Services */}
+          <div>
+            <h3 className='font-semibold text-light mb-4'>Services</h3>
+            <ul className='space-y-2 text-gray-200'>
+              {services.map((link, index) => (
+                <li key={index}>
+                  <a
+                    href={link.link}
+                    className='text-light/80 hover:text-light transition'
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-              <FooterColumn>
-                <FooterTitle>Resources</FooterTitle>
-                <FooterList>
-                  <FooterItem>
-                    <a href="#" className="whiteColor animate pointer font13">
-                      Documentation
-                    </a>
-                  </FooterItem>
-                  <FooterItem>
-                    <a href="#" className="whiteColor animate pointer font13">
-                      API Reference
-                    </a>
-                  </FooterItem>
-                  <FooterItem>
-                    <a href="#" className="whiteColor animate pointer font13">
-                      Help Center
-                    </a>
-                  </FooterItem>
-                  <FooterItem>
-                    <a href="#" className="whiteColor animate pointer font13">
-                      Community
-                    </a>
-                  </FooterItem>
-                  <FooterItem>
-                    <a href="#" className="whiteColor animate pointer font13">
-                      Blog
-                    </a>
-                  </FooterItem>
-                </FooterList>
-              </FooterColumn>
+          {/* Get In Touch */}
+          <div>
+            <h3 className='font-semibold text-light mb-4'>Get In Touch</h3>
+            <ul className='space-y-3 text-gray-200'>
+              <li className='flex items-start gap-3'>
+                <a
+                  href='#'
+                  className='flex space-x-3 text-light/80 hover:text-light transition'
+                >
+                  <MapPin className='w-5 h-5 mt-1 text-light/80' />
+                  <span>
+                    3524 Siverside Rd Suite 35B,
+                    <br />
+                    Wilmington, DE 19810–4929,
+                    <br />
+                    New Castle, Delaware
+                  </span>
+                </a>
+              </li>
+              <li className='flex items-center gap-3'>
+                <Mail className='w-5 h-5 text-light/80' />
+                <a
+                  href='mailto:connect@abmtechnologies.us'
+                  className='text-light/80 hover:text-light transition'
+                >
+                  connect@abmtechnologies.us
+                </a>
+              </li>
+              <li className='flex items-center gap-3'>
+                <Phone className='w-5 h-5 text-light/80' />
+                <a
+                  href='tel:+13477671521'
+                  className='text-light/80 hover:text-light transition'
+                >
+                  +1 347-767-1521
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-              <FooterColumn>
-                <FooterTitle>Contact</FooterTitle>
-                <ContactInfo>
-                  <ContactItem>
-                    <ContactIcon>📧</ContactIcon>
-                    <ContactText>
-                      <div>hello@abmtechnologies.com</div>
-                      <div>support@abmtechnologies.com</div>
-                    </ContactText>
-                  </ContactItem>
-                  <ContactItem>
-                    <ContactIcon>📞</ContactIcon>
-                    <ContactText>
-                      <div>+1 (555) 123-4567</div>
-                      <div>+1 (555) 987-6543</div>
-                    </ContactText>
-                  </ContactItem>
-                  <ContactItem>
-                    <ContactIcon>📍</ContactIcon>
-                    <ContactText>
-                      <div>123 Tech Street</div>
-                      <div>San Francisco, CA 94105</div>
-                    </ContactText>
-                  </ContactItem>
-                </ContactInfo>
-              </FooterColumn>
-            </FooterTop>
-
-            <FooterBottom>
-              <FooterBottomLeft>
-                <Copyright>
-                  © {getCurrentYear()} <span className="purpleColor">ABM Technologies</span>. All Rights Reserved.
-                </Copyright>
-                <LegalLinks>
-                  <LegalLink href="#">Privacy Policy</LegalLink>
-                  <LegalLink href="#">Terms of Service</LegalLink>
-                  <LegalLink href="#">Cookie Policy</LegalLink>
-                  <LegalLink href="#">GDPR Compliance</LegalLink>
-                </LegalLinks>
-              </FooterBottomLeft>
-              <FooterBottomRight>
-                <BackToTop>
-                  <Link className="whiteColor animate pointer font13" to="home" smooth={true} offset={-80}>
-                    <BackToTopIcon>⬆️</BackToTopIcon>
-                    Back to top
-                  </Link>
-                </BackToTop>
-              </FooterBottomRight>
-            </FooterBottom>
-          </MainFooter>
+        {/* Divider */}
+        <div className='border-t border-white/30 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-200'>
+          <p>© 2025 ABM Technologies & Consultancy Inc</p>
+          <div className='flex items-center gap-2 mt-3 md:mt-0'>
+            <span>Connect with us on:</span>
+            <a
+              href='#'
+              className='text-light/80 rounded-sm hover:bg-light hover:text-primary transition p-1'
+              aria-label='LinkedIn'
+            >
+              <Linkedin size={18} />
+            </a>
+          </div>
         </div>
       </div>
-    </Wrapper>
+    </footer>
   );
 }
-
-const Wrapper = styled.div`
-  width: 100%;
-`;
-
-const MainFooter = styled.div`
-  padding: 60px 0 30px 0;
-`;
-
-const FooterTop = styled.div`
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
-  gap: 40px;
-  margin-bottom: 40px;
-  
-  @media (max-width: 1200px) {
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 30px;
-  }
-  
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
-  }
-  
-  @media (max-width: 550px) {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-`;
-
-const FooterColumn = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-const FooterBrand = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-`;
-
-const BrandDescription = styled.p`
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 14px;
-  line-height: 1.6;
-  margin: 0;
-`;
-
-const SocialLinks = styled.div`
-  display: flex;
-  gap: 15px;
-`;
-
-const SocialLink = styled.a`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    background: rgba(118, 32, 255, 0.8);
-    transform: translateY(-2px);
-  }
-`;
-
-const SocialIcon = styled.span`
-  font-size: 18px;
-`;
-
-const FooterTitle = styled.h3`
-  color: white;
-  font-size: 18px;
-  font-weight: 600;
-  margin: 0 0 20px 0;
-`;
-
-const FooterList = styled.ul`
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-`;
-
-const FooterItem = styled.li`
-  margin: 0;
-`;
-
-const ContactInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-`;
-
-const ContactItem = styled.div`
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-`;
-
-const ContactIcon = styled.span`
-  font-size: 16px;
-  margin-top: 2px;
-`;
-
-const ContactText = styled.div`
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 14px;
-  line-height: 1.5;
-  
-  div {
-    margin-bottom: 2px;
-  }
-`;
-
-const FooterBottom = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 30px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  
-  @media (max-width: 768px) {
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
-  }
-`;
-
-const FooterBottomLeft = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-`;
-
-const Copyright = styled.div`
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 14px;
-  
-  .purpleColor {
-    color: #7620ff;
-  }
-`;
-
-const LegalLinks = styled.div`
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  
-  @media (max-width: 550px) {
-    justify-content: center;
-    gap: 15px;
-  }
-`;
-
-const LegalLink = styled.a`
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 12px;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  
-  &:hover {
-    color: #7620ff;
-  }
-`;
-
-const FooterBottomRight = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-const BackToTop = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 25px;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    background: rgba(118, 32, 255, 0.8);
-    transform: translateY(-2px);
-  }
-`;
-
-const BackToTopIcon = styled.span`
-  font-size: 14px;
-`;
