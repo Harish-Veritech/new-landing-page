@@ -1,7 +1,7 @@
 import TopNavbar from "../components/Nav/TopNavbar";
 import Header from "../components/Sections/Header";
 import WhyABM from "../components/Sections/WhyABM";
-import Services from "../components/Sections/Services";
+import TechCapabilities from "../components/Sections/TechCapabilities";
 import UniversitySolutions from "../components/Sections/UniversitySolutions";
 import Compliance from "../components/Sections/Compliance";
 import Risks from "../components/Sections/Risks";
@@ -15,7 +15,7 @@ export default function Landing() {
       <TopNavbar />
       <Header />
       <WhyABM />
-      <Services />
+      <TechCapabilities />
       <UniversitySolutions />
       <TechStackSection />
       <Compliance />
