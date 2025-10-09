@@ -17,8 +17,8 @@ export default function Footer() {
     { label: "AI Solutions", link: "#" },
   ];
   return (
-    <footer className='bg-[#0d36b5] text-light'>
-      <div className='max-w-7xl mx-auto px-6 py-14'>
+    <footer className='bg-primary text-light'>
+      <div className='max-w-7xl mx-auto py-14'>
         <div className='grid md:grid-cols-4 gap-10'>
           {/* Logo */}
           <div>
