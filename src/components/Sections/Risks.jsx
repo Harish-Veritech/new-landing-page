@@ -1,224 +1,80 @@
-import React from "react";
-import styled from "styled-components";
-import FullButton from "../Buttons/Button";
+import { Group } from "lucide-react";
+import Graduates from "../../assets/img/graduates.jpg";
+import Button from "../Buttons/Button";
 
 export default function Risks() {
+  const risksItems = [
+    {
+      icon: <Group className='w-8 h-8 text-white' />,
+      desc: "Lose prospective international students to tech-savvy competitors",
+    },
+    {
+      icon: <Group className='w-8 h-8 text-white' />,
+      desc: "Higher administrative costs from manual, inefficient processes",
+    },
+    {
+      icon: <Group className='w-8 h-8 text-white' />,
+      desc: "Declining student satisfaction as expectations for digital interaction rise",
+    },
+  ];
+
   return (
-    <Wrapper id='risks'>
-      <div className='lightBg' style={{ padding: "80px 0" }}>
-        <div className='container'>
-          <RisksContent className='flexSpaceCenter'>
-            <LeftSide>
-              <h1 className='font40 extraBold'>
-                Why Wait? The Risks of Fragmented Systems
-              </h1>
-              <RisksList>
-                <RiskItem>
-                  <RiskIcon>⚠️</RiskIcon>
-                  <RiskText>
-                    Lose prospective international students to tech-savvy
-                    competitors
-                  </RiskText>
-                </RiskItem>
-                <RiskItem>
-                  <RiskIcon>⚠️</RiskIcon>
-                  <RiskText>
-                    Higher administrative costs from manual, inefficient
-                    processes
-                  </RiskText>
-                </RiskItem>
-                <RiskItem>
-                  <RiskIcon>⚠️</RiskIcon>
-                  <RiskText>
-                    Declining student satisfaction as expectations for digital
-                    interaction rise
-                  </RiskText>
-                </RiskItem>
-              </RisksList>
-              <Banner>
-                <BannerText>
-                  <strong>71% of the top 100 universities use Drupal</strong> —
-                  future-proof your institution with scalable, reliable tech.
-                </BannerText>
-              </Banner>
-              <ButtonWrapper>
-                <FullButton title='Talk to an Expert Today' />
-              </ButtonWrapper>
-            </LeftSide>
-            <RightSide>
-              <VisualElements>
-                <PersonIcon>👩‍💼</PersonIcon>
-                <NetworkIcon>📊</NetworkIcon>
-              </VisualElements>
-            </RightSide>
-          </RisksContent>
+    <section className='bg-primary/5 py-20 px-6'>
+      <div className='max-w-7xl mx-auto px-6 text-center'>
+        <p className='text-primary uppercase tracking-widest text-lg mb-4'>
+          The Cost of Inaction
+        </p>
+        <h2 className='text-3xl md:text-4xl font-semibold text-dark mb-14'>
+          Why Wait? The Risks of Fragmented Systems
+        </h2>
+
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-6 md:max-w-4xl mx-auto place-content-center mb-14'>
+          {risksItems.map((item, index) => (
+            <div
+              key={index}
+              className='flex flex-col justify-center items-start gap-4 bg-white p-4 rounded-lg'
+            >
+              <div className='flex-shrink-0 bg-gradient-to-b from-primary/50 to-primary rounded-lg p-3'>
+                {item.icon}
+              </div>
+              <p className='text-dark text-start'>{item.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Card */}
+        <div class='relative flex flex-col items-center justify-center rounded-2xl overflow-hidden bg-primary text-center text-white p-8 md:p-10 max-w-4xl mx-auto'>
+          <div class='absolute inset-0'>
+            <img
+              src={Graduates}
+              alt='Graduates'
+              class='w-full h-full object-cover opacity-40'
+            />
+            <div class='absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-800/70'></div>
+          </div>
+
+          <div class='relative z-10 max-w-3xl flex flex-col items-center'>
+            <h2 class='text-6xl font-semibold text-orange-400 pt-2 mb-2'>
+              71%
+            </h2>
+            <p class='text-xl md:text-2xl lg:text-3xl font-medium leading-relaxed mb-6 px-6'>
+              of the top 100 universities use{" "}
+              <span class='font-semibold'>Drupal</span> - future-proof your
+              institution with
+              <span class='text-cyan-300 font-semibold'>
+                {" "}
+                scalable, reliable tech.
+              </span>
+            </p>
+            <Button
+              title='Talk to an Expert'
+              action={() => {}}
+              outline
+              classname='border-light text-light backdrop-blur-xs'
+            />
+          </div>
         </div>
       </div>
-    </Wrapper>
+    </section>
   );
 }
-
-const Wrapper = styled.section`
-  width: 100%;
-`;
-
-const RisksContent = styled.div`
-  @media (max-width: 960px) {
-    flex-direction: column;
-    text-align: center;
-  }
-`;
-
-const LeftSide = styled.div`
-  width: 60%;
-  @media (max-width: 960px) {
-    width: 100%;
-    order: 2;
-    margin: 50px 0;
-  }
-`;
-
-const RightSide = styled.div`
-  width: 40%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @media (max-width: 960px) {
-    width: 100%;
-    order: 1;
-    margin-top: 30px;
-  }
-`;
-
-const RisksList = styled.div`
-  margin: 40px 0;
-`;
-
-const RiskItem = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 25px;
-  padding: 20px;
-  background: #fff5f5;
-  border-left: 4px solid #e53e3e;
-  border-radius: 8px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.3),
-      transparent
-    );
-    transition: left 0.5s;
-  }
-
-  &:hover {
-    transform: translateX(10px) scale(1.02);
-    box-shadow: 0 8px 25px rgba(229, 62, 62, 0.2);
-    background: linear-gradient(135deg, #fff5f5 0%, #ffe6e6 100%);
-    border-left-color: #dc2626;
-  }
-
-  &:hover::before {
-    left: 100%;
-  }
-
-  &:active {
-    transform: translateX(5px) scale(1.01);
-  }
-`;
-
-const RiskIcon = styled.div`
-  font-size: 24px;
-  flex-shrink: 0;
-  margin-top: 2px;
-  transition: all 0.3s ease;
-
-  ${RiskItem}:hover & {
-    transform: scale(1.3) rotate(15deg);
-    filter: drop-shadow(0 4px 8px rgba(229, 62, 62, 0.3));
-  }
-`;
-
-const RiskText = styled.div`
-  font-size: 16px;
-  line-height: 1.5;
-  color: #333;
-`;
-
-const Banner = styled.div`
-  background: #2c3e50;
-  color: white;
-  padding: 20px;
-  border-radius: 8px;
-  margin: 30px 0;
-  text-align: center;
-`;
-
-const BannerText = styled.div`
-  font-size: 16px;
-  line-height: 1.5;
-
-  strong {
-    color: #f39c12;
-  }
-`;
-
-const ButtonWrapper = styled.div`
-  max-width: 250px;
-  @media (max-width: 960px) {
-    margin: 0 auto;
-  }
-`;
-
-const VisualElements = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-`;
-
-const PersonIcon = styled.div`
-  font-size: 80px;
-  background: white;
-  padding: 20px;
-  border-radius: 50%;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  cursor: pointer;
-
-  &:hover {
-    transform: scale(1.1) rotate(-5deg);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-  }
-`;
-
-const NetworkIcon = styled.div`
-  font-size: 60px;
-  background: white;
-  padding: 15px;
-  border-radius: 50%;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  cursor: pointer;
-
-  &:hover {
-    transform: scale(1.2) rotate(10deg);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
-    color: white;
-  }
-`;

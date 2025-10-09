@@ -7,6 +7,7 @@ export default function Button({
   outline,
   trackingEvent,
   icon,
+  classname,
 }) {
   const handleClick = () => {
     if (trackingEvent && typeof window !== "undefined" && window.gtag) {
@@ -45,7 +46,9 @@ export default function Button({
         target='_blank'
         rel='noopener noreferrer'
         onClick={handleClick}
-        className={`${baseClasses} ${outline ? outlinedClasses : solidClasses}`}
+        className={`${baseClasses} ${
+          outline ? outlinedClasses : solidClasses
+        } ${classname}`}
       >
         {ButtonContent}
       </a>
@@ -55,7 +58,9 @@ export default function Button({
   return (
     <button
       onClick={handleClick}
-      className={`${baseClasses} ${outline ? outlinedClasses : solidClasses}`}
+      className={`${baseClasses} ${
+        outline ? outlinedClasses : solidClasses
+      } ${classname}`}
     >
       {ButtonContent}
     </button>

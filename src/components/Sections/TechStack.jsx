@@ -1,75 +1,66 @@
-import React from "react";
-import { Network, Users, Workflow, Bot } from "lucide-react";
-import Button from "../Buttons/Button";
+import { Cloud, Database, Code2, Layers, Settings } from "lucide-react";
 
-export default function UniversitySolutions() {
-  const solutions = [
+export default function TechStackSection() {
+  const techItems = [
     {
-      icon: <Network className='w-7 h-7 text-white' />,
-      title: "Custom, Connected Digital Ecosystems",
-      description:
-        "Integrated systems that connect your LMS, CRM, and campus operations into one smart digital twin.",
+      icon: <Cloud className='w-8 h-8 text-primary' />,
+      title: "Cloud Infrastructure",
+      desc: "Scalable, reliable deployments",
     },
     {
-      icon: <Users className='w-7 h-7 text-white' />,
-      title: "Partnership Approach",
-      description:
-        "We work alongside your teams, tailoring technology solutions to match your institutional realities.",
+      icon: <Layers className='w-8 h-8 text-primary' />,
+      title: "Custom Tech Stack",
+      desc: "Tailored solutions built for your institution",
     },
     {
-      icon: <Workflow className='w-7 h-7 text-white' />,
-      title: "Student–First Workflows",
-      description:
-        "Multilingual onboarding, AI-powered chat, and mobile-first experiences that delight modern students.",
+      icon: <Database className='w-8 h-8 text-primary' />,
+      title: "Databases",
+      desc: "Secure, high-performance data management",
     },
     {
-      icon: <Bot className='w-7 h-7 text-white' />,
-      title: "AI & Automation",
-      description:
-        "Intelligent chatbots, automated teaching assistants, and language companions to increase efficiency.",
+      icon: <Code2 className='w-8 h-8 text-primary' />,
+      title: "Learning Management System",
+      desc: "Blackboard, Canvas, Moodle integrations",
+    },
+    {
+      icon: <Settings className='w-8 h-8 text-primary' />,
+      title: "Web Frameworks",
+      desc: "Flexible and modern development frameworks",
     },
   ];
 
   return (
-    <section className='relative bg-white py-20'>
+    <section className='bg-primary/5 py-20 px-6'>
       <div className='max-w-7xl mx-auto px-6 text-center'>
-        {/* Section Header */}
         <p className='text-primary uppercase tracking-widest text-lg mb-4'>
-          What We Do – Solutions At A Glance
+          Key Tech Capabilities
         </p>
         <h2 className='text-3xl md:text-4xl font-semibold text-dark mb-14'>
-          Custom Solutions Built For Universities
+          Our Technology Stack Powers Your Success
         </h2>
 
-        {/* Solutions Grid */}
-        <div className='grid sm:grid-cols-2 gap-x-2 gap-y-3 md:gap-x-4 md:gap-y-5 mb-10 max-w-3xl mx-auto'>
-          {solutions.map((solution, index) => (
+        <div className='grid grid-cols-1 md:grid-cols-2 md:grid-rows-6 gap-3 text-left md:max-w-3xl lg:max-w-4xl mx-auto'>
+          {techItems.map((item, index) => (
             <div
               key={index}
-              className='flex items-start gap-4 bg-blue-50/70 rounded-xl hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 text-left p-6'
+              className={`flex items-start gap-4 bg-primary/5 rounded-xl p-6 hover:shadow-md transition-shadow ${
+                [1, 3].includes(index) ? "row-span-3" : "row-span-2"
+              } ${index === 2 ? "row-start-3" : ""} ${
+                index === 3 ? "col-start-2 row-start-4" : ""
+              } ${index === 4 ? "row-start-5" : ""}`}
             >
-              <div className='flex-shrink-0 bg-gradient-to-b from-primary/50 to-primary rounded-lg p-3'>
-                {solution.icon}
-              </div>
+              <div className='flex-shrink-0'>{item.icon}</div>
               <div>
-                <h3 className='text-xl font-semibold text-dark mb-1'>
-                  {solution.title}
+                <h3 className='text-lg font-semibold text-dark mb-1'>
+                  {item.title}
                 </h3>
-                <p className='text-dark/80 text-sm leading-relaxed'>
-                  {solution.description}
+                <p className='text-dark/80 text-base leading-relaxed'>
+                  {item.desc}
                 </p>
               </div>
             </div>
           ))}
         </div>
-
-        {/* CTA Button */}
-        <Button
-          title='Explore Our Solutions'
-          action={() => {}}
-          trackingEvent='Explore Our Solutions'
-          outline
-        />
       </div>
     </section>
   );
