@@ -13,7 +13,7 @@ export default function TopNavbar() {
     <nav
       className={`fixed top-0 left-0 w-full bg-transparent lg:bg-white z-50 transition-all duration-300 h-20 lg:shadow-lg`}
     >
-      <div className='max-w-7xl z-5 mx-auto flex justify-center lg:justify-between items-center h-full'>
+      <div className='max-w-7xl z-5 mx-auto flex justify-center lg:justify-between items-center h-full px-8'>
         <a
           href='https://abmtechnologies.us/'
           className='flex items-center gap-2'
