@@ -5,22 +5,22 @@ import Button from "../Buttons/Button";
 export default function Risks() {
   const risksItems = [
     {
-      icon: <Group className='w-8 h-8 text-white' />,
+      icon: <Group className='w-12 h-12 text-white' />,
       desc: "Lose prospective international students to tech-savvy competitors",
     },
     {
-      icon: <Group className='w-8 h-8 text-white' />,
+      icon: <Group className='w-12 h-12 text-white' />,
       desc: "Higher administrative costs from manual, inefficient processes",
     },
     {
-      icon: <Group className='w-8 h-8 text-white' />,
+      icon: <Group className='w-12 h-12 text-white' />,
       desc: "Declining student satisfaction as expectations for digital interaction rise",
     },
   ];
 
   return (
-    <section className='bg-primary/5 py-20 px-6'>
-      <div className='max-w-7xl mx-auto px-6 text-center'>
+    <section className='bg-primary/5 py-20'>
+      <div className='max-w-7xl mx-auto text-center'>
         <p className='text-primary uppercase tracking-widest text-lg mb-4'>
           The Cost of Inaction
         </p>
@@ -28,22 +28,24 @@ export default function Risks() {
           Why Wait? The Risks of Fragmented Systems
         </h2>
 
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-6 md:max-w-4xl mx-auto place-content-center mb-14'>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-6 md:max-w-5xl mx-auto place-content-center mb-14'>
           {risksItems.map((item, index) => (
             <div
               key={index}
-              className='flex flex-col justify-center items-start gap-4 bg-white p-4 rounded-lg'
+              className='flex flex-col justify-center items-start gap-4 bg-white p-6 rounded-lg hover:shadow-lg duration-300 transition-shadow'
             >
-              <div className='flex-shrink-0 bg-gradient-to-b from-primary/50 to-primary rounded-lg p-3'>
+              <div className='flex-shrink-0 bg-gradient-to-b from-cyan-500 to-primary rounded-lg p-3'>
                 {item.icon}
               </div>
-              <p className='text-dark text-start'>{item.desc}</p>
+              <p className='text-dark text-xl text-start leading-8'>
+                {item.desc}
+              </p>
             </div>
           ))}
         </div>
 
         {/* Card */}
-        <div class='relative flex flex-col items-center justify-center rounded-2xl overflow-hidden bg-primary text-center text-white p-8 md:p-10 max-w-4xl mx-auto'>
+        <div class='relative flex flex-col items-center justify-center rounded-2xl overflow-hidden bg-blue-950 text-center text-white p-8 md:p-10 max-w-5xl mx-auto'>
           <div class='absolute inset-0'>
             <img
               src={Graduates}
@@ -57,7 +59,7 @@ export default function Risks() {
             <h2 class='text-6xl font-semibold text-orange-400 pt-2 mb-2'>
               71%
             </h2>
-            <p class='text-xl md:text-2xl lg:text-3xl font-medium leading-relaxed mb-6 px-6'>
+            <p class='text-xl md:text-2xl lg:text-3xl font-semibold leading-relaxed mb-6 px-6'>
               of the top 100 universities use{" "}
               <span class='font-semibold'>Drupal</span> - future-proof your
               institution with

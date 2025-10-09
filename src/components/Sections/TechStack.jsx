@@ -30,8 +30,8 @@ export default function TechStackSection() {
   ];
 
   return (
-    <section className='bg-primary/5 py-20 px-6'>
-      <div className='max-w-7xl mx-auto px-6 text-center'>
+    <section className='bg-primary/5 py-20'>
+      <div className='max-w-7xl mx-auto text-center'>
         <p className='text-primary uppercase tracking-widest text-lg mb-4'>
           Key Tech Capabilities
         </p>
@@ -39,7 +39,7 @@ export default function TechStackSection() {
           Our Technology Stack Powers Your Success
         </h2>
 
-        <div className='grid grid-cols-1 md:grid-cols-2 md:grid-rows-6 gap-3 text-left md:max-w-3xl lg:max-w-4xl mx-auto'>
+        <div className='grid grid-cols-1 md:grid-cols-2 md:grid-rows-6 gap-3 text-left md:max-w-3xl lg:max-w-5xl mx-auto'>
           {techItems.map((item, index) => (
             <div
               key={index}
@@ -51,10 +51,10 @@ export default function TechStackSection() {
             >
               <div className='flex-shrink-0'>{item.icon}</div>
               <div>
-                <h3 className='text-lg font-semibold text-dark mb-1'>
+                <h3 className='text-2xl font-semibold text-dark mb-1'>
                   {item.title}
                 </h3>
-                <p className='text-dark/80 text-base leading-relaxed'>
+                <p className='text-dark/70 text-lg leading-relaxed'>
                   {item.desc}
                 </p>
               </div>

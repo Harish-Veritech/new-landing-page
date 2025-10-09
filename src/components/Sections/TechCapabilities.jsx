@@ -11,6 +11,7 @@ import Canvas from "../../assets/img/TechCapabilities/canvas.svg";
 import Postgresql from "../../assets/img/TechCapabilities/postgresql.svg";
 import MongoDb from "../../assets/img/TechCapabilities/mongodb.svg";
 import MySql from "../../assets/img/TechCapabilities/mysql.svg";
+import Slider from "react-slick";
 
 const techs = [
   { name: "AWS", image: Aws },
@@ -39,7 +40,6 @@ export default function TechCapabilities() {
           Our Tech Capabilities
         </h2>
 
-        {/* Infinite scrolling container */}
         <div className='relative overflow-hidden'>
           <div className='flex animate-scroll gap-10 md:gap-16 items-center'>
             {techs.map((tech, index) => (

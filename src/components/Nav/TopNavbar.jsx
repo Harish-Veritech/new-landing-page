@@ -11,9 +11,9 @@ export default function TopNavbar() {
   ];
   return (
     <nav
-      className={`fixed top-0 left-0 w-full bg-white z-50 transition-all duration-300 h-16`}
+      className={`fixed top-0 left-0 w-full bg-white z-50 transition-all duration-300 h-20 shadow-lg`}
     >
-      <div className='max-w-7xl mx-auto px-5 md:px-6 flex justify-between items-center h-full'>
+      <div className='max-w-7xl mx-auto flex justify-between items-center h-full'>
         <a
           href='https://abmtechnologies.us/'
           className='flex items-center gap-2'
@@ -27,7 +27,7 @@ export default function TopNavbar() {
             <li>
               <a
                 href={link.link}
-                className='text-primary font-semibold text-sm hover:text-accent transition-colors'
+                className='text-primary font-semibold text-base hover:text-accent transition-colors'
               >
                 {link.label}
               </a>

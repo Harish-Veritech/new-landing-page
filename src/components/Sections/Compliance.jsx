@@ -23,8 +23,8 @@ export default function Compliance() {
   ];
 
   return (
-    <section className='bg-white py-20 px-6'>
-      <div className='max-w-7xl mx-auto px-6 text-center'>
+    <section className='bg-white py-20'>
+      <div className='max-w-7xl mx-auto text-center'>
         <p className='text-primary uppercase tracking-widest text-lg mb-4'>
           Built for Scale, Security & Accessibility
         </p>
@@ -32,21 +32,25 @@ export default function Compliance() {
           Compliance, Security & Customization
         </h2>
 
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-6 md:max-w-3xl mx-auto place-content-center'>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-6 md:max-w-5xl mx-auto place-content-center'>
           {techItems.map((item, index) => (
-            <div key={index} className='flex flex-col gap-5'>
-              <div className='image-container flex items-center justify-center'>
+            <div
+              key={index}
+              className='flex flex-col gap-5 border border-transparent hover:border-primary/40 p-3 rounded-lg duration-300 transition-all'
+            >
+              <div className='relative'>
                 <img
                   src={item.image}
                   alt={item.title}
-                  className='w-60 rounded-lg'
+                  className='w-full rounded-lg'
                 />
+                <div className='absolute top-0 left-0 bg-primary z-10 w-full h-full opacity-30 rounded-lg' />
               </div>
               <div className='space-y-1'>
-                <h4 className='font-semibold text-lg text-start'>
+                <h4 className='font-semibold text-2xl text-start'>
                   {item.title}
                 </h4>
-                <p className='text-dark text-start'>{item.desc}</p>
+                <p className='text-dark text-xl text-start'>{item.desc}</p>
               </div>
             </div>
           ))}

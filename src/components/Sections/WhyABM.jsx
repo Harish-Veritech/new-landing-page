@@ -27,7 +27,7 @@ const WhyABM = () => {
 
   return (
     <section className='relative bg-white py-20'>
-      <div className='max-w-7xl mx-auto px-6 text-center'>
+      <div className='max-w-7xl mx-auto text-center'>
         <div className='grid sm:grid-cols-2 gap-18'>
           <div className='relative'>
             <div className='relative max-w-2xl'>
