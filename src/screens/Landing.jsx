@@ -1,5 +1,3 @@
-import React from "react";
-// Sections
 import TopNavbar from "../components/Nav/TopNavbar";
 import Header from "../components/Sections/Header";
 import WhyABM from "../components/Sections/WhyABM";
@@ -8,7 +6,6 @@ import UniversitySolutions from "../components/Sections/UniversitySolutions";
 import Compliance from "../components/Sections/Compliance";
 import Risks from "../components/Sections/Risks";
 import CTA from "../components/Sections/CTA";
-import Contact from "../components/Sections/Contact";
 import Footer from "../components/Sections/Footer";
 import TechStackSection from "../components/Sections/TechStack";
 
@@ -17,14 +14,13 @@ export default function Landing() {
     <>
       <TopNavbar />
       <Header />
-      {/* <WhyABM /> */}
+      <WhyABM />
       <Services />
       <UniversitySolutions />
       <TechStackSection />
       <Compliance />
       <Risks />
       <CTA />
-      {/* <Contact /> */}
       <Footer />
     </>
   );
