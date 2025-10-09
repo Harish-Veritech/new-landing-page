@@ -30,7 +30,7 @@ export default function TechStackSection() {
   ];
 
   return (
-    <section className='bg-primary/5 py-20'>
+    <section className='bg-primary/5 py-20 px-6 lg:px-0'>
       <div className='max-w-7xl mx-auto text-center'>
         <p className='text-primary uppercase tracking-widest text-lg mb-4'>
           Key Tech Capabilities
@@ -44,10 +44,10 @@ export default function TechStackSection() {
             <div
               key={index}
               className={`flex items-start gap-4 bg-primary/5 rounded-xl p-6 hover:shadow-md transition-shadow ${
-                [1, 3].includes(index) ? "row-span-3" : "row-span-2"
-              } ${index === 2 ? "row-start-3" : ""} ${
-                index === 3 ? "col-start-2 row-start-4" : ""
-              } ${index === 4 ? "row-start-5" : ""}`}
+                [1, 3].includes(index) ? "md:row-span-3" : "md:row-span-2"
+              } ${index === 2 ? "l:row-start-3" : ""} ${
+                index === 3 ? "md:col-start-2 md:row-start-4" : ""
+              } ${index === 4 ? "md:row-start-5" : ""}`}
             >
               <div className='flex-shrink-0'>{item.icon}</div>
               <div>

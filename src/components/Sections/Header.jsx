@@ -9,11 +9,11 @@ export default function Header() {
       id='home'
       className="relative w-full bg-[url('/assets/img/hero-bg.png')] bg-cover bg-center bg-no-repeat"
     >
-      <div className='relative flex flex-wrap items-center justify-between pt-12 md:pt-36 z-10 max-w-7xl mx-auto'>
+      <div className='relative flex flex-wrap items-center justify-between pt-32 px-5 md:px-0 md:pt-36 z-10 max-w-7xl mx-auto'>
         {/* Left side */}
-        <div className='w-full md:w-1/2 flex justify-center md:justify-start mb-10 md:mb-0 flex-2'>
+        <div className='w-1/2 flex justify-center md:justify-start mb-10 md:mb-0 flex-2'>
           <div>
-            <h1 className='text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight'>
+            <h1 className='text-2xl md:text-5xl lg:text-6xl font-semibold leading-tight'>
               <span className='bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent select-none'>
                 Empowering Universities
               </span>
@@ -24,7 +24,7 @@ export default function Header() {
               </span>
             </h1>
 
-            <p className='max-w-2xl mt-6 mb-12 text-2xl font-light leading-relaxed text-dark'>
+            <p className='max-w-3xs md:max-w-2xl mt-4 md:mt-6 mb-6 md:mb-12 text-xl md:text-2xl font-light leading-7 text-dark'>
               Transform your university into a connected, scalable, and
               high-performing digital ecosystem.
             </p>
@@ -42,11 +42,11 @@ export default function Header() {
         </div>
 
         {/* Right side */}
-        <div className='w-full md:w-1/2 flex justify-center md:justify-end relative z-10 flex-1 transition-transform duration-300 hover:scale-[1.02] hover:-translate-y-2'>
+        <div className='w-1/2 flex justify-center md:justify-end relative z-10 flex-1 transition-transform duration-300 hover:scale-[1.02] hover:-translate-y-2'>
           <img
             src={HeaderImage}
             alt='office'
-            className='w-[480px] max-w-[600px] md:max-w-[1200px] object-contain'
+            className='w-[250px] lg:w-[480px] max-w-[600px] md:max-w-[1200px] object-contain'
           />
           <img
             src={Arrow}

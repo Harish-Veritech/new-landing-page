@@ -23,7 +23,7 @@ export default function Compliance() {
   ];
 
   return (
-    <section className='bg-white py-20'>
+    <section className='bg-white py-20 px-6 lg:px-0'>
       <div className='max-w-7xl mx-auto text-center'>
         <p className='text-primary uppercase tracking-widest text-lg mb-4'>
           Built for Scale, Security & Accessibility

@@ -19,7 +19,7 @@ export default function Risks() {
   ];
 
   return (
-    <section className='bg-primary/5 py-20'>
+    <section className='bg-primary/5 py-20 px-6 lg:px-0'>
       <div className='max-w-7xl mx-auto text-center'>
         <p className='text-primary uppercase tracking-widest text-lg mb-4'>
           The Cost of Inaction
@@ -28,7 +28,7 @@ export default function Risks() {
           Why Wait? The Risks of Fragmented Systems
         </h2>
 
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-6 md:max-w-5xl mx-auto place-content-center mb-14'>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-6 md:max-w-5xl mx-auto place-content-center mb-8 lg:mb-14'>
           {risksItems.map((item, index) => (
             <div
               key={index}
@@ -56,10 +56,10 @@ export default function Risks() {
           </div>
 
           <div class='relative z-10 max-w-3xl flex flex-col items-center'>
-            <h2 class='text-6xl font-semibold text-orange-400 pt-2 mb-2'>
+            <h2 class='text-5xl md:text-6xl font-semibold text-orange-400 pt-2 mb-2'>
               71%
             </h2>
-            <p class='text-xl md:text-2xl lg:text-3xl font-semibold leading-relaxed mb-6 px-6'>
+            <p class='text-xl md:text-2xl lg:text-3xl font-semibold leading-relaxed mb-6 lg:px-6'>
               of the top 100 universities use{" "}
               <span class='font-semibold'>Drupal</span> - future-proof your
               institution with

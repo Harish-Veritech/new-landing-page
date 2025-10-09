@@ -26,35 +26,33 @@ const WhyABM = () => {
   ];
 
   return (
-    <section className='relative bg-white py-20'>
+    <section className='relative bg-white py-20 px-6 lg:px-0'>
       <div className='max-w-7xl mx-auto text-center'>
-        <div className='grid sm:grid-cols-2 gap-18'>
-          <div className='relative'>
-            <div className='relative max-w-2xl'>
-              <img
-                src={GridLayout}
-                alt='Photo Grid Layout'
-                className='object-contain user-select-none'
-              />
+        <div className='grid lg:grid-cols-2 gap-18 mx-auto'>
+          <div className='relative max-w-lg lg:max-w-2xl mx-auto'>
+            <img
+              src={GridLayout}
+              alt='Photo Grid Layout'
+              className='object-contain user-select-none'
+            />
 
-              <img
-                src={GoodRelation}
-                alt='Good Relation with customer'
-                className='absolute top-2 left-6 animate-move-down-up user-select-none'
-              />
-              <img
-                src={GlobalReach}
-                alt='Global Reach for all variety of project/domains'
-                className='absolute bottom-18 left-22 z-10 animate-move-right-left user-select-none'
-              />
-              <img
-                src={Security}
-                alt='Security'
-                className='absolute bottom-2 right-38 z-5 animate-move-up-down user-select-none'
-              />
-            </div>
+            <img
+              src={GoodRelation}
+              alt='Good Relation with customer'
+              className='absolute top-2 left-6 animate-move-down-up user-select-none'
+            />
+            <img
+              src={GlobalReach}
+              alt='Global Reach for all variety of project/domains'
+              className='absolute bottom-18 left-22 z-10 animate-move-right-left user-select-none'
+            />
+            <img
+              src={Security}
+              alt='Security'
+              className='absolute bottom-2 left-56 z-5 animate-move-up-down user-select-none'
+            />
           </div>
-          <div className='text-start'>
+          <div className='text-start max-w-2xl mx-auto'>
             <p className='text-primary uppercase tracking-widest text-lg mb-2'>
               Trusted By Global Institutions
             </p>

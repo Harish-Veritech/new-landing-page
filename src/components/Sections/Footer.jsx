@@ -16,12 +16,14 @@ export default function Footer() {
     { label: "Managed Services", link: "#" },
     { label: "AI Solutions", link: "#" },
   ];
+
   return (
     <footer className='bg-primary text-light'>
-      <div className='max-w-7xl mx-auto py-14'>
-        <div className='grid md:grid-cols-4 gap-10'>
+      <div className='max-w-7xl mx-auto px-6 sm:px-10 py-14'>
+        {/* Main grid */}
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-14'>
           {/* Logo */}
-          <div>
+          <div className='flex justify-start bg-white p-2 rounded-lg place-self-center md:justify-center lg:justify-start'>
             <LogoIcon />
           </div>
 
@@ -45,7 +47,7 @@ export default function Footer() {
           {/* Services */}
           <div>
             <h3 className='font-semibold text-light mb-4'>Services</h3>
-            <ul className='space-y-2 text-gray-200'>
+            <ul className='space-y-2'>
               {services.map((link, index) => (
                 <li key={index}>
                   <a
@@ -62,24 +64,19 @@ export default function Footer() {
           {/* Get In Touch */}
           <div>
             <h3 className='font-semibold text-light mb-4'>Get In Touch</h3>
-            <ul className='space-y-3 text-gray-200'>
+            <ul className='space-y-3'>
               <li className='flex items-start gap-3'>
-                <a
-                  href='#'
-                  className='flex space-x-3 text-light/80 hover:text-light transition'
-                >
-                  <MapPin className='w-5 h-5 mt-1 text-light/80' />
-                  <span>
-                    3524 Siverside Rd Suite 35B,
-                    <br />
-                    Wilmington, DE 19810–4929,
-                    <br />
-                    New Castle, Delaware
-                  </span>
-                </a>
+                <MapPin className='w-5 h-5 mt-1 text-light/80 flex-shrink-0' />
+                <span className='text-light/80'>
+                  3524 Siverside Rd Suite 35B,
+                  <br />
+                  Wilmington, DE 19810–4929,
+                  <br />
+                  New Castle, Delaware
+                </span>
               </li>
               <li className='flex items-center gap-3'>
-                <Mail className='w-5 h-5 text-light/80' />
+                <Mail className='w-5 h-5 text-light/80 flex-shrink-0' />
                 <a
                   href='mailto:connect@abmtechnologies.us'
                   className='text-light/80 hover:text-light transition'
@@ -88,7 +85,7 @@ export default function Footer() {
                 </a>
               </li>
               <li className='flex items-center gap-3'>
-                <Phone className='w-5 h-5 text-light/80' />
+                <Phone className='w-5 h-5 text-light/80 flex-shrink-0' />
                 <a
                   href='tel:+13477671521'
                   className='text-light/80 hover:text-light transition'
@@ -101,9 +98,9 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className='border-t border-white/30 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-200'>
+        <div className='border-t border-white/30 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-200 text-center gap-3'>
           <p>© 2025 ABM Technologies & Consultancy Inc</p>
-          <div className='flex items-center gap-2 mt-3 md:mt-0'>
+          <div className='flex items-center gap-2'>
             <span>Connect with us on:</span>
             <a
               href='#'

@@ -11,9 +11,9 @@ export default function TopNavbar() {
   ];
   return (
     <nav
-      className={`fixed top-0 left-0 w-full bg-white z-50 transition-all duration-300 h-20 shadow-lg`}
+      className={`fixed top-0 left-0 w-full bg-transparent lg:bg-white z-50 transition-all duration-300 h-20 lg:shadow-lg`}
     >
-      <div className='max-w-7xl mx-auto flex justify-between items-center h-full'>
+      <div className='max-w-7xl z-5 mx-auto flex justify-center lg:justify-between items-center h-full'>
         <a
           href='https://abmtechnologies.us/'
           className='flex items-center gap-2'
@@ -21,8 +21,7 @@ export default function TopNavbar() {
           <LogoIcon />
         </a>
 
-        {/* Right Side: Menu */}
-        <ul className='flex items-center gap-8 list-none m-0 p-0'>
+        <ul className='hidden lg:flex items-center gap-8 list-none m-0 p-0'>
           {navlinks.map((link) => (
             <li>
               <a
