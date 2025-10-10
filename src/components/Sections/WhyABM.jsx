@@ -3,6 +3,7 @@ import GridLayout from "../../assets/svg/photo-grid-layout.svg";
 import GlobalReach from "../../assets/img/whyabm/global-reach.png";
 import Security from "../../assets/img/whyabm/security.png";
 import GoodRelation from "../../assets/img/whyabm/good-relation.png";
+import RelationSecurityGlobalReach from "../../assets/img/whyabm/relation-security-global-reach.png";
 
 const WhyABM = () => {
   const whyabmLists = [
@@ -26,31 +27,39 @@ const WhyABM = () => {
   ];
 
   return (
-    <section className='relative bg-white py-20 px-6 lg:px-0'>
+    <section className='relative bg-white py-20 px-6 lg:px-0' id='aboutus'>
       <div className='max-w-7xl mx-auto text-center'>
         <div className='grid lg:grid-cols-2 gap-18 mx-auto'>
           <div className='relative max-w-lg lg:max-w-2xl mx-auto'>
-            <img
-              src={GridLayout}
-              alt='Photo Grid Layout'
-              className='object-contain user-select-none'
-            />
+            <div className='hidden lg:flex'>
+              <img
+                src={GridLayout}
+                alt='Photo Grid Layout'
+                className='object-contain user-select-none'
+              />
 
-            <img
-              src={GoodRelation}
-              alt='Good Relation with customer'
-              className='absolute top-2 left-6 animate-move-down-up user-select-none'
-            />
-            <img
-              src={GlobalReach}
-              alt='Global Reach for all variety of project/domains'
-              className='absolute bottom-18 left-22 z-10 animate-move-right-left user-select-none'
-            />
-            <img
-              src={Security}
-              alt='Security'
-              className='absolute bottom-2 left-56 z-5 animate-move-up-down user-select-none'
-            />
+              <img
+                src={GoodRelation}
+                alt='Good Relation with customer'
+                className='absolute top-2 left-6 animate-move-down-up user-select-none'
+              />
+              <img
+                src={GlobalReach}
+                alt='Global Reach for all variety of project/domains'
+                className='absolute bottom-18 left-22 z-10 animate-move-right-left user-select-none'
+              />
+              <img
+                src={Security}
+                alt='Security'
+                className='absolute bottom-2 left-56 z-5 animate-move-up-down user-select-none'
+              />
+            </div>
+            <div className='flex lg:hidden'>
+              <img
+                src={RelationSecurityGlobalReach}
+                alt='Good Relation with high security & Global Reach'
+              />
+            </div>
           </div>
           <div className='text-start max-w-2xl mx-auto'>
             <p className='text-primary uppercase tracking-widest text-lg mb-2'>

@@ -31,7 +31,7 @@ const techs = [
 
 export default function TechCapabilities() {
   return (
-    <section className='bg-primary/5 py-16'>
+    <section className='bg-primary/5 py-16' id='services'>
       <div className='px-4 text-center max-w-7xl mx-auto'>
         <p className='text-primary uppercase tracking-widest text-lg mb-3'>
           Innovation You Can Trust

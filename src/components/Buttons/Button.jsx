@@ -22,7 +22,7 @@ export default function Button({
   };
 
   const baseClasses =
-    "inline-flex items-center justify-center gap-2 px-6 py-3 font-semibold text-base rounded-lg transition-colors duration-300 cursor-pointer";
+    "inline-flex items-center justify-center gap-2 px-3 py-1 lg:px-6 py-3 font-semibold text-base rounded-lg transition-colors duration-300 cursor-pointer";
 
   const solidClasses = "bg-[#0045FF] text-white hover:bg-[#0036CC]";
 
