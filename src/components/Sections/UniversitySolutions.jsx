@@ -48,9 +48,9 @@ export default function UniversitySolutions() {
           {solutions.map((solution, index) => (
             <div
               key={index}
-              className='flex items-start gap-8 bg-blue-50/70 rounded-xl hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 text-left p-6'
+              className='flex items-start gap-4 md:gap-8 bg-blue-50/70 rounded-xl hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 text-left p-6'
             >
-              <div className='flex-shrink-0 bg-gradient-to-b from-cyan-300 to-primary rounded-lg p-4'>
+              <div className='flex-shrink-0 bg-gradient-to-b from-cyan-300 to-primary rounded-lg p-2 md:p-4'>
                 <img src={solution.icon} alt={solution.title} />
               </div>
               <div>

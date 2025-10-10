@@ -75,14 +75,16 @@ const WhyABM = () => {
             <div className='space-y-4'>
               {whyabmLists.map((listItem) => {
                 return (
-                  <div class='relative flex gap-4 items-center pb-4 group border-b border-grey/10'>
+                  <div class='relative grid grid-cols-6 gap-4 items-center pb-4 group border-b border-grey/10'>
                     <div class='absolute bottom-0 left-0 h-[1px] w-full overflow-hidden'>
                       <div class='absolute inset-0 bg-primary translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out'></div>
                     </div>
-                    <span class='border-2 border-grey/10 p-2 rounded-full'>
+                    <span class='flex border-2 col-span-1 border-grey/10 p-1 md:p-2 rounded-full w-fit'>
                       <img src={listItem.icon} alt={listItem.title} />
                     </span>
-                    <p class='text-start text-grey-800'>{listItem.title}</p>
+                    <p class='text-start col-span-5 text-grey-800'>
+                      {listItem.title}
+                    </p>
                   </div>
                 );
               })}
