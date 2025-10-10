@@ -1,29 +1,31 @@
-import React from "react";
-import { Network, Users, Workflow, Bot } from "lucide-react";
 import Button from "../Buttons/Button";
+import Ecosystems from "../../assets/svg/solutions/ecosystems.svg";
+import Approach from "../../assets/svg/solutions/approach.svg";
+import Workflows from "../../assets/svg/solutions/workflows.svg";
+import Automation from "../../assets/svg/solutions/automation.svg";
 
 export default function UniversitySolutions() {
   const solutions = [
     {
-      icon: <Network className='w-10 h-10 text-white' />,
+      icon: Ecosystems,
       title: "Custom, Connected Digital Ecosystems",
       description:
         "Integrated systems that connect your LMS, CRM, and campus operations into one smart digital twin.",
     },
     {
-      icon: <Users className='w-10 h-10 text-white' />,
+      icon: Approach,
       title: "Partnership Approach",
       description:
         "We work alongside your teams, tailoring technology solutions to match your institutional realities.",
     },
     {
-      icon: <Workflow className='w-10 h-10 text-white' />,
+      icon: Workflows,
       title: "Student–First Workflows",
       description:
         "Multilingual onboarding, AI-powered chat, and mobile-first experiences that delight modern students.",
     },
     {
-      icon: <Bot className='w-10 h-10 text-white' />,
+      icon: Automation,
       title: "AI & Automation",
       description:
         "Intelligent chatbots, automated teaching assistants, and language companions to increase efficiency.",
@@ -48,8 +50,8 @@ export default function UniversitySolutions() {
               key={index}
               className='flex items-start gap-8 bg-blue-50/70 rounded-xl hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 text-left p-6'
             >
-              <div className='flex-shrink-0 bg-gradient-to-b from-primary/50 to-primary rounded-lg p-4'>
-                {solution.icon}
+              <div className='flex-shrink-0 bg-gradient-to-b from-cyan-300 to-primary rounded-lg p-4'>
+                <img src={solution.icon} alt={solution.title} />
               </div>
               <div>
                 <h3 className='text-2xl text-dark mb-1'>{solution.title}</h3>

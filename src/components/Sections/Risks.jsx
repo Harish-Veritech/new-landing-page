@@ -1,19 +1,21 @@
-import { Group } from "lucide-react";
 import Graduates from "../../assets/img/graduates.jpg";
 import Button from "../Buttons/Button";
+import Group from "../../assets/svg/risks/group-of-people.svg";
+import Arrows from "../../assets/svg/risks/arrows.svg";
+import RejectedCard from "../../assets/svg/risks/card-rejected.svg";
 
 export default function Risks() {
   const risksItems = [
     {
-      icon: <Group className='w-12 h-12 text-white' />,
+      icon: Group,
       desc: "Lose prospective international students to tech-savvy competitors",
     },
     {
-      icon: <Group className='w-12 h-12 text-white' />,
+      icon: Arrows,
       desc: "Higher administrative costs from manual, inefficient processes",
     },
     {
-      icon: <Group className='w-12 h-12 text-white' />,
+      icon: RejectedCard,
       desc: "Declining student satisfaction as expectations for digital interaction rise",
     },
   ];
@@ -34,8 +36,12 @@ export default function Risks() {
               key={index}
               className='flex flex-col justify-center items-start gap-4 bg-white p-6 rounded-lg hover:shadow-lg duration-300 transition-shadow'
             >
-              <div className='flex-shrink-0 bg-gradient-to-b from-cyan-500 to-primary rounded-lg p-3'>
-                {item.icon}
+              <div className='flex-shrink-0 flex items-center justify-center bg-gradient-to-b from-cyan-300 to-primary rounded-lg p-3 w-14 h-14'>
+                <img
+                  src={item.icon}
+                  alt={item.desc}
+                  className='object-contain'
+                />
               </div>
               <p className='text-dark text-xl text-start leading-8'>
                 {item.desc}
