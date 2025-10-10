@@ -1,226 +1,90 @@
-import React from "react";
-import styled from "styled-components";
-// Components
-import FullButton from "../Buttons/FullButton";
-// Assets
-import HeaderImage from "../../assets/img/hero-image.webp";
-import QuotesIcon from "../../assets/svg/Quotes";
+import Button from "../Buttons/Button";
+import HeaderImage from "../../assets/img/hero-image.png";
+import Arrow from "../../assets/img/arrow.png";
+import Books from "../../assets/img/hero-books.png";
+import HeroImage from "../../assets/img/abm-hero-image.png";
 
 export default function Header() {
   return (
-    <Background>
-      <Wrapper id="home" className="container flexSpaceCenter">
-        <LeftSide className="flexCenter">
+    <section
+      id='home'
+      className="relative w-full bg-[url('/assets/img/hero-bg.png')] bg-cover bg-center bg-no-repeat"
+    >
+      <div className='relative grid grid-cols-1 md:grid-cols-2 pt-32 md:pt-36 z-10 px-6 md:px-8 md:pb-8 lg:pb-0 max-w-5xl lg:max-w-7xl mx-auto md:max-h-650px lg:max-h-[750px]'>
+        {/* Left side */}
+        <div className='w-full flex justify-start md:justify-center mb-10 md:mb-0 flex-2'>
           <div>
-            <h1 className="extraBold font60">Empowering Universities with Future-Ready Digital Solutions</h1>
-            <HeaderP className="font13 semiBold">
-              Transform your university into a connected, scalable, and high-performing digital ecosystem.
-            </HeaderP>
-            <BtnWrapper>
-              <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
-                <FullButton 
-                  title="Schedule a Demo" 
-                  href="https://calendly.com/meet-abmtechnologies/30min" 
-                  trackingEvent="Schedule Demo - Header"
-                />
-                <FullButton title="Contact Us" border />
-              </div>
-            </BtnWrapper>
+            <h1 className='text-2xl md:text-5xl lg:text-6xl font-semibold leading-tight'>
+              <span className='bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent select-none'>
+                Empowering Universities
+              </span>
+              <br />
+              with Future-Ready <br />
+              <span className='bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent select-none'>
+                Digital Solutions
+              </span>
+            </h1>
+
+            <p className='max-w-3xs md:max-w-2xl mt-4 md:mt-6 mb-6 md:mb-12 text-xl md:text-2xl font-light leading-7 text-dark'>
+              Transform your university into a connected, scalable, and
+              high-performing digital ecosystem.
+            </p>
+
+            <div className='flex flex-col md:flex-row overflow-visible gap-4 max-w-[400px] transition-all duration-300'>
+              <Button
+                title='Schedule a Demo'
+                href='https://calendly.com/meet-abmtechnologies/30min'
+                trackingEvent='Schedule Demo - Header'
+                icon='calendar'
+              />
+              <Button title='Contact Us' outline icon='phone' />
+            </div>
           </div>
-        </LeftSide>
-        <RightSide>
-          <ImageWrapper>
-            <Img className="radius8" height={450} src={HeaderImage} alt="office" style={{zIndex: 9}} />
-            <QuoteWrapper className="flexCenter darkBg radius8">
-              <QuotesWrapper>
-                <QuotesIcon />
-              </QuotesWrapper>
-              <div>
-                <p className="font15" style={{color: '#1a1a1a', fontWeight: 'bold', textShadow: '0 1px 2px rgba(255, 255, 255, 0.8)'}}>
-                  <em>71% of the top 100 universities use Drupal — future-proof your institution with scalable, reliable tech.</em>
-                </p>
-                <p className="font13 textRight" style={{marginTop: '10px', color: '#580cd2', fontWeight: '600', textShadow: '0 1px 2px rgba(255, 255, 255, 0.8)'}}>Industry Leading Platform</p>
-              </div>
-            </QuoteWrapper>
-          </ImageWrapper>
-        </RightSide>
-      </Wrapper>
-    </Background>
+        </div>
+
+        {/* Right side */}
+        <div className='hidden lg:flex relative w-full justify-center md:justify-end -z-10 flex-1 transition-transform duration-300 hover:scale-[1.02] hover:-translate-y-2'>
+          <img
+            src={HeaderImage}
+            alt='office'
+            className='w-[250px] lg:w-[480px] object-contain'
+          />
+          <img
+            src={Arrow}
+            alt='arrow to books'
+            className='absolute -z-10 top-0 left-8 lg:left-[10%] xl:left-[18%] object-contain'
+          />
+          <img
+            src={Books}
+            alt='Books'
+            className='absolute -z-5 -bottom-2 left-16 lg:left-[20%] xl:left-[30%] w-24 md:w-36 object-contain'
+          />
+
+          {/* <img
+            src={HeaderImage}
+            alt='office'
+            className='max-w-[250px] sm:max-w-[300px] md:max-w-[400px] lg:w-[480px] lg:max-w-[600px] object-contain'
+          />
+          <img
+            src={Arrow}
+            alt='arrow to books'
+            className='absolute w-[300px] sm:w-[350px] md:w-[400px] lg:w-[480px] left-[5%] sm:left-[25%] md:left-20 lg:left-36 -top-8 md:top-0 object-contain -z-10'
+          />
+          <img
+            src={Books}
+            alt='Books'
+            className='absolute w-24 md:w-28 lg:w-36 left-[15%] sm:left-[30%] md:left-24 lg:left-38 -z-5 -bottom-[2%] md:bottom-0 object-contain'
+          /> */}
+        </div>
+        <div className='flex lg:hidden relative -z-10'>
+          <img
+            src={HeroImage}
+            alt='A Girl with laptop in her hand'
+            // className='absolute -top-[313px] md:top-30 lg:top-0 -right-12 w-[250px] md:w-[350px] lg:w-[450px]'
+            className='absolute -top-[19.5rem] md:top-30 lg:top-0 -right-12 w-[250px] md:w-[350px] lg:w-[450px]'
+          />
+        </div>
+      </div>
+    </section>
   );
 }
-
-
-const Background = styled.section`
-  padding-top: 80px;
-  width: 100%;
-  background: 
-    linear-gradient(180deg, rgba(255, 255, 255, 1) 25%, transparent 100%),
-    url('./assets/img/dots-dark.svg') no-repeat center center / cover;
-  
-  > * {
-    position: relative;
-    z-index: 2;
-  }
-  
-  @media (max-width: 960px) {
-    flex-direction: column;
-  }
-`;
-const Wrapper = styled.div`
-  padding-top: 80px;
-  width: 100%;
-  min-height: 840px;
-  
-  @media (max-width: 960px) {
-    flex-direction: column;
-  }
-`;
-const LeftSide = styled.div`
-  width: 50%;
-  height: 100%;
-  
-  h1 {
-    animation: titleGlow 3s ease-in-out infinite alternate;
-  }
-  
-  @keyframes titleGlow {
-    0% {
-      text-shadow: 0 0 5px rgba(118, 32, 255, 0.3);
-    }
-    100% {
-      text-shadow: 0 0 20px rgba(118, 32, 255, 0.6), 0 0 30px rgba(118, 32, 255, 0.4);
-    }
-  }
-  
-  @media (max-width: 960px) {
-    width: 100%;
-    order: 2;
-    margin: 50px 0;
-    text-align: center;
-  }
-  @media (max-width: 560px) {
-    margin: 80px 0 50px 0;
-  }
-`;
-const RightSide = styled.div`
-  width: 50%;
-  height: 100%;
-  @media (max-width: 960px) {
-    width: 100%;
-    order: 1;
-    margin-top: 30px;
-  }
-`;
-const HeaderP = styled.div`
-  max-width: 470px;
-  padding: 15px 0 50px 0;
-  line-height: 1.5rem;
-  @media (max-width: 960px) {
-    padding: 15px 0 50px 0;
-    text-align: center;
-    max-width: 100%;
-  }
-`;
-const BtnWrapper = styled.div`
-  max-width: 400px;
-  @media (max-width: 960px) {
-    margin: 0 auto;
-  }
-  
-  div {
-    transition: all 0.3s ease;
-  }
-  
-  div:hover {
-    transform: translateY(-2px);
-  }
-`;
-const ImageWrapper = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  position: relative;
-  z-index: 9;
-  @media (max-width: 960px) {
-    width: 100%;
-    justify-content: center;
-  }
-`;
-const Img = styled.img`
-  transition: all 0.3s ease;
-  
-  &:hover {
-    transform: scale(1.02);
-  }
-  
-  @media (max-width: 560px) {
-    width: 80%;
-    height: auto;
-  }
-`;
-const QuoteWrapper = styled.div`
-  position: absolute;
-  left: 0;
-  bottom: 50px;
-  max-width: 330px;
-  padding: 30px;
-  z-index: 99;
-  transition: all 0.3s ease;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(248, 249, 250, 0.7) 100%);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(118, 32, 255, 0.4);
-  box-shadow: 0 12px 40px rgba(118, 32, 255, 0.2);
-  overflow: hidden;
-  border-radius: 16px;
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(118, 32, 255, 0.08) 0%, rgba(88, 12, 210, 0.05) 50%, rgba(255, 255, 255, 0.1) 100%);
-    border-radius: inherit;
-    pointer-events: none;
-  }
-  
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-    transition: left 0.6s;
-  }
-  
-  &:hover {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 20px 50px rgba(118, 32, 255, 0.3);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.95) 100%);
-    border-color: rgba(118, 32, 255, 0.6);
-  }
-  
-  &:hover::before {
-    background: linear-gradient(135deg, rgba(118, 32, 255, 0.12) 0%, rgba(88, 12, 210, 0.08) 50%, rgba(255, 255, 255, 0.15) 100%);
-  }
-  
-  &:hover::after {
-    left: 100%;
-  }
-  
-  @media (max-width: 960px) {
-    left: 20px;
-  }
-  @media (max-width: 560px) {
-    bottom: -50px;
-  }
-`;
-const QuotesWrapper = styled.div`
-  position: absolute;
-  left: -20px;
-  top: -10px;
-`;
-
-

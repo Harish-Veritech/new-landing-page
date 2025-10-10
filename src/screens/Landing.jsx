@@ -1,15 +1,13 @@
-import React from "react";
-// Sections
 import TopNavbar from "../components/Nav/TopNavbar";
 import Header from "../components/Sections/Header";
 import WhyABM from "../components/Sections/WhyABM";
-import Services from "../components/Sections/Services";
-import TechStack from "../components/Sections/TechStack";
+import TechCapabilities from "../components/Sections/TechCapabilities";
+import UniversitySolutions from "../components/Sections/UniversitySolutions";
 import Compliance from "../components/Sections/Compliance";
 import Risks from "../components/Sections/Risks";
-import FinalCTA from "../components/Sections/FinalCTA";
-import Contact from "../components/Sections/Contact";
-import Footer from "../components/Sections/Footer"
+import CTA from "../components/Sections/CTA";
+import Footer from "../components/Sections/Footer";
+import TechStackSection from "../components/Sections/TechStack";
 
 export default function Landing() {
   return (
@@ -17,15 +15,13 @@ export default function Landing() {
       <TopNavbar />
       <Header />
       <WhyABM />
-      <Services />
-      <TechStack />
+      <TechCapabilities />
+      <UniversitySolutions />
+      <TechStackSection />
       <Compliance />
       <Risks />
-      <FinalCTA />
-      <Contact />
+      <CTA />
       <Footer />
     </>
   );
 }
-
-

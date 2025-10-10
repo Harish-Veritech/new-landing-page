@@ -1,171 +1,94 @@
-import React from "react";
-import styled from "styled-components";
-import AnimatedSection from "../Elements/AnimatedSection";
+import { Settings } from "lucide-react";
+import GridLayout from "../../assets/svg/photo-grid-layout.svg";
+import GlobalReach from "../../assets/img/whyabm/global-reach.png";
+import Security from "../../assets/img/whyabm/security.png";
+import GoodRelation from "../../assets/img/whyabm/good-relation.png";
+import RelationSecurityGlobalReach from "../../assets/img/whyabm/relation-security-global-reach.png";
 
-export default function WhyABM() {
+const WhyABM = () => {
+  const whyabmLists = [
+    {
+      icon: <Settings className='w-7 h-7 text-primary' />,
+      title: "500+ Global Projects in Education, Finance, Healthcare, SaaS.",
+    },
+    {
+      icon: <Settings className='w-7 h-7 text-primary' />,
+      title: "Proven Scalable, Secure Solutions.",
+    },
+    {
+      icon: <Settings className='w-7 h-7 text-primary' />,
+      title: "Deep Expertise in Custom Integrations.",
+    },
+    {
+      icon: <Settings className='w-7 h-7 text-primary' />,
+      title:
+        "71% of Top 100 Universities Use Drupal – Industry’s Leading Open-Source Platform.",
+    },
+  ];
+
   return (
-    <Wrapper id="why-abm">
-      <div className="whiteBg" style={{ padding: "80px 0" }}>
-        <div className="container">
-          <AnimatedSection direction="up">
-            <HeaderInfo>
-              <h1 className="font40 extraBold">Trusted by Global Institutions</h1>
-              <p className="font16" style={{ marginTop: '20px', color: '#666', maxWidth: '800px', margin: '20px auto 0' }}>
-                With over a decade of experience transforming digital ecosystems, ABM Technologies has become the trusted partner for universities and institutions worldwide. Our proven track record, deep technical expertise, and commitment to excellence make us the ideal choice for your digital transformation journey.
-              </p>
-            </HeaderInfo>
-          </AnimatedSection>
-          <TrustGrid className="flex">
-            <AnimatedSection direction="up" delay={100}>
-              <TrustItem>
-                <CheckIcon>✓</CheckIcon>
-                <TrustText>
-                  <strong>500+ Global Projects</strong> across Education, Finance, Healthcare, and SaaS sectors. Our extensive portfolio includes digital transformations for major universities, financial institutions, healthcare systems, and technology companies worldwide, demonstrating our ability to deliver complex, mission-critical solutions at scale.
-                </TrustText>
-              </TrustItem>
-            </AnimatedSection>
-            <AnimatedSection direction="up" delay={200}>
-              <TrustItem>
-                <CheckIcon>✓</CheckIcon>
-                <TrustText>
-                  <strong>Proven Scalable, Secure Solutions</strong> built with enterprise-grade security, compliance standards, and performance optimization. Our solutions handle millions of users, process vast amounts of data, and maintain 99.9% uptime while meeting strict security requirements including GDPR, FERPA, and SOC 2 compliance.
-                </TrustText>
-              </TrustItem>
-            </AnimatedSection>
-            <AnimatedSection direction="up" delay={300}>
-              <TrustItem>
-                <CheckIcon>✓</CheckIcon>
-                <TrustText>
-                  <strong>Deep Expertise in Custom Integrations</strong> with 15+ years of experience connecting disparate systems, APIs, and platforms. We specialize in seamless integration of LMS, CRM, SIS, payment gateways, and third-party services, ensuring your technology ecosystem works as one unified, intelligent platform.
-                </TrustText>
-              </TrustItem>
-            </AnimatedSection>
-            <AnimatedSection direction="up" delay={400}>
-              <TrustItem>
-                <CheckIcon>✓</CheckIcon>
-                <TrustText>
-                  <strong>71% of Top 100 Universities</strong> trust Drupal as their content management platform. We're certified Drupal experts with deep knowledge of the platform's capabilities, security features, and scalability options, ensuring your institution benefits from the industry's most robust and flexible open-source solution.
-                </TrustText>
-              </TrustItem>
-            </AnimatedSection>
-          </TrustGrid>
+    <section className='relative bg-white py-20 px-6 lg:px-0' id='aboutus'>
+      <div className='max-w-7xl mx-auto text-center'>
+        <div className='grid lg:grid-cols-2 gap-18 mx-auto'>
+          <div className='relative max-w-lg lg:max-w-2xl mx-auto'>
+            <div className='hidden lg:flex'>
+              <img
+                src={GridLayout}
+                alt='Photo Grid Layout'
+                className='object-contain user-select-none'
+              />
+
+              <img
+                src={GoodRelation}
+                alt='Good Relation with customer'
+                className='absolute top-2 left-6 animate-move-down-up user-select-none'
+              />
+              <img
+                src={GlobalReach}
+                alt='Global Reach for all variety of project/domains'
+                className='absolute bottom-18 left-22 z-10 animate-move-right-left user-select-none'
+              />
+              <img
+                src={Security}
+                alt='Security'
+                className='absolute bottom-2 left-56 z-5 animate-move-up-down user-select-none'
+              />
+            </div>
+            <div className='flex lg:hidden'>
+              <img
+                src={RelationSecurityGlobalReach}
+                alt='Good Relation with high security & Global Reach'
+              />
+            </div>
+          </div>
+          <div className='text-start max-w-2xl mx-auto'>
+            <p className='text-primary uppercase tracking-widest text-lg mb-2'>
+              Trusted By Global Institutions
+            </p>
+            <h2 className='text-3xl md:text-4xl font-semibold text-dark mb-4'>
+              Why ABM?
+            </h2>
+
+            <div className='space-y-4'>
+              {whyabmLists.map((listItem) => {
+                return (
+                  <div class='relative flex gap-4 items-center pb-4 group border-b border-grey/10'>
+                    <div class='absolute bottom-0 left-0 h-[1px] w-full overflow-hidden'>
+                      <div class='absolute inset-0 bg-primary translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out'></div>
+                    </div>
+                    <span class='border-2 border-grey/10 p-2 rounded-full'>
+                      {listItem.icon}
+                    </span>
+                    <p class='text-start text-grey-800'>{listItem.title}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
-    </Wrapper>
+    </section>
   );
-}
+};
 
-const Wrapper = styled.section`
-  width: 100%;
-  position: relative;
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><defs><pattern id="dots" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="15" cy="15" r="1" fill="%23000" fill-opacity="0.05"/></pattern></defs><rect width="100%" height="100%" fill="url(%23dots)"/></svg>');
-  background-repeat: repeat;
-  background-size: 60px 60px;
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.98);
-    z-index: 1;
-  }
-  
-  > * {
-    position: relative;
-    z-index: 2;
-  }
-`;
-
-const HeaderInfo = styled.div`
-  text-align: center;
-  margin-bottom: 60px;
-  @media (max-width: 860px) {
-    text-align: center;
-  }
-`;
-
-const TrustGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-  
-  @media (max-width: 960px) {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    max-width: 100%;
-  }
-`;
-
-const TrustItem = styled.div`
-  display: flex;
-  align-items: flex-start;
-  gap: 15px;
-  padding: 20px;
-  background: linear-gradient(135deg, rgba(248, 249, 250, 0.9) 0%, rgba(233, 236, 239, 0.8) 100%);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 12px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, transparent 50%, rgba(255, 255, 255, 0.1) 100%);
-    border-radius: inherit;
-    pointer-events: none;
-  }
-  
-  &:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.9) 100%);
-  }
-  
-  &:active {
-    transform: translateY(-4px) scale(1.01);
-  }
-`;
-
-const CheckIcon = styled.div`
-  background: #28a745;
-  color: white;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 14px;
-  flex-shrink: 0;
-  margin-top: 2px;
-  transition: all 0.3s ease;
-  
-  ${TrustItem}:hover & {
-    transform: scale(1.2) rotate(360deg);
-    background: #20c997;
-  }
-`;
-
-const TrustText = styled.div`
-  font-size: 16px;
-  line-height: 1.5;
-  color: #333;
-  
-  strong {
-    color: #2c3e50;
-  }
-`;
+export default WhyABM;

@@ -1,185 +1,80 @@
-import React, { useEffect, useState } from "react";
-import styled from "styled-components";
-import { Link } from "react-scroll";
-// Components
-import Sidebar from "../Nav/Sidebar";
-import Backdrop from "../Elements/Backdrop";
-// Assets
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 import LogoIcon from "../../assets/svg/Logo";
-import BurgerIcon from "../../assets/svg/BurgerIcon";
 
-export default function TopNavbar() {
-  const [y, setY] = useState(window.scrollY);
-  const [sidebarOpen, toggleSidebar] = useState(false);
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    window.addEventListener("scroll", () => setY(window.scrollY));
-    return () => {
-      window.removeEventListener("scroll", () => setY(window.scrollY));
-    };
-  }, [y]);
+  const navlinks = [
+    { label: "Services", link: "#services" },
+    { label: "About Us", link: "#aboutus" },
+    { label: "Engagement Model", link: "#" },
+    { label: "Blog", link: "#" },
+    { label: "Career", link: "#" },
+    {
+      label: "Let’s Talk →",
+      link: "https://calendly.com/meet-abmtechnologies/30min",
+    },
+  ];
 
   return (
-    <>
-      <Sidebar sidebarOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
-      {sidebarOpen && <Backdrop toggleSidebar={toggleSidebar} />}
-      <Wrapper
-        className='flexCenter animate whiteBg'
-        style={y > 100 ? { height: "60px" } : { height: "80px" }}
-      >
-        <NavInner className='container flexSpaceCenter'>
-          <a
-            className='pointer flexNullCenter'
-            href='https://abmtechnologies.us/'
+    <nav
+      className={`absolute lg:fixed top-0 left-0 w-full bg-transparent backdrop-blur-md lg:bg-white z-50 transition-all duration-300 h-20 lg:shadow-lg`}
+    >
+      <div className='max-w-7xl mx-auto flex justify-between items-center h-full px-6 lg:px-8'>
+        {/* Logo */}
+        <a
+          href='https://abmtechnologies.us/'
+          className='flex items-center gap-2 justify-center mx-auto lg:mx-0'
+        >
+          <LogoIcon width={120} />
+        </a>
+        <div className='lg:hidden'>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className='text-primary focus:outline-none'
+            aria-label='Toggle menu'
           >
-            <LogoIcon />
-          </a>
-          <BurderWrapper
-            className='pointer'
-            onClick={() => toggleSidebar(!sidebarOpen)}
-          >
-            <BurgerIcon />
-          </BurderWrapper>
-          <UlWrapper className='flexNullCenter'>
-            <li className='semiBold font15 pointer'>
-              <Link
-                activeClass='active'
-                style={{ padding: "10px 15px" }}
-                to='home'
-                spy={true}
-                smooth={true}
-                offset={-80}
-              >
-                Home
-              </Link>
-            </li>
-            <li className='semiBold font15 pointer'>
-              <Link
-                activeClass='active'
-                style={{ padding: "10px 15px" }}
-                to='why-abm'
-                spy={true}
-                smooth={true}
-                offset={-80}
-              >
-                Why ABM
-              </Link>
-            </li>
-            <li className='semiBold font15 pointer'>
-              <Link
-                activeClass='active'
-                style={{ padding: "10px 15px" }}
-                to='services'
-                spy={true}
-                smooth={true}
-                offset={-80}
-              >
-                Solutions
-              </Link>
-            </li>
-            <li className='semiBold font15 pointer'>
-              <Link
-                activeClass='active'
-                style={{ padding: "10px 15px" }}
-                to='tech-stack'
-                spy={true}
-                smooth={true}
-                offset={-80}
-              >
-                Technology
-              </Link>
-            </li>
-            <li className='semiBold font15 pointer'>
-              <Link
-                activeClass='active'
-                style={{ padding: "10px 15px" }}
-                to='compliance'
-                spy={true}
-                smooth={true}
-                offset={-80}
-              >
-                Compliance
-              </Link>
-            </li>
-            <li className='semiBold font15 pointer'>
-              <Link
-                activeClass='active'
-                style={{ padding: "10px 15px" }}
-                to='contact'
-                spy={true}
-                smooth={true}
-                offset={-80}
-              >
-                Contact
-              </Link>
-            </li>
-          </UlWrapper>
-          <UlWrapperRight className='flexNullCenter'>
-            <li className='semiBold font15 pointer'>
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
+
+        {/* Desktop Nav */}
+        <ul className='hidden lg:flex items-center gap-8 list-none m-0 p-0'>
+          {navlinks.map((link) => (
+            <li key={link.label}>
               <a
-                href='mailto:hello@abmtechnologies.com'
-                style={{ padding: "10px 30px 10px 0" }}
+                href={link.link}
+                className='text-primary font-semibold text-base hover:text-accent transition-colors'
               >
-                Contact Us
+                {link.label}
               </a>
             </li>
-            <li className='semiBold font15 pointer flexCenter'>
-              <a
-                href='https://calendly.com/meet-abmtechnologies/30min'
-                className='radius8 lightBg'
-                style={{ padding: "10px 15px" }}
-                target='_blank'
-                rel='noopener noreferrer'
-                onClick={() => {
-                  if (typeof window !== "undefined" && window.gtag) {
-                    window.gtag("event", "click", {
-                      event_category: "Button",
-                      event_label: "Schedule Demo - Navbar",
-                      value: 1,
-                    });
-                  }
-                }}
+          ))}
+        </ul>
+      </div>
+
+      {/* Mobile Dropdown */}
+      {isOpen && (
+        <div className='lg:hidden bg-white border-t border-dark/10 shadow-md h-screen'>
+          <ul className='flex flex-col items-center'>
+            {navlinks.map((link) => (
+              <li
+                key={link.label}
+                className='w-full border-b border-dark/10 px-5 py-4'
               >
-                Schedule Demo
-              </a>
-            </li>
-          </UlWrapperRight>
-        </NavInner>
-      </Wrapper>
-    </>
+                <a
+                  href={link.link}
+                  className='text-dark font-medium text-lg hover:text-primary transition-colors'
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </nav>
   );
 }
-
-const Wrapper = styled.nav`
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
-`;
-const NavInner = styled.div`
-  position: relative;
-  height: 100%;
-`;
-const BurderWrapper = styled.button`
-  outline: none;
-  border: 0px;
-  background-color: transparent;
-  height: 100%;
-  padding: 0 15px;
-  display: none;
-  @media (max-width: 1060px) {
-    display: block;
-  }
-`;
-const UlWrapper = styled.ul`
-  display: flex;
-  @media (max-width: 1060px) {
-    display: none;
-  }
-`;
-const UlWrapperRight = styled.ul`
-  @media (max-width: 1060px) {
-    display: none;
-  }
-`;
