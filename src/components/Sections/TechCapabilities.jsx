@@ -11,7 +11,6 @@ import Canvas from "../../assets/img/TechCapabilities/canvas.svg";
 import Postgresql from "../../assets/img/TechCapabilities/postgresql.svg";
 import MongoDb from "../../assets/img/TechCapabilities/mongodb.svg";
 import MySql from "../../assets/img/TechCapabilities/mysql.svg";
-import Slider from "react-slick";
 
 const techs = [
   { name: "AWS", image: Aws },
