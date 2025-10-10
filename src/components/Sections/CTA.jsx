@@ -16,7 +16,11 @@ const CTA = () => {
         </h2>
 
         <div class='flex flex-wrap justify-center md:justify-end gap-4'>
-          <Button action={() => {}} icon='calendar' title='Schedule a Demo' />
+          <Button
+            href='https://calendly.com/meet-abmtechnologies/30min'
+            icon='calendar'
+            title='Schedule a Demo'
+          />
           <Button
             action={() => {}}
             icon='phone'

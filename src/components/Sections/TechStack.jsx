@@ -1,29 +1,33 @@
-import { Cloud, Database, Code2, Layers, Settings } from "lucide-react";
+import CloudInfra from "../../assets/svg/techcapabilities/cloud-infrastructure.svg";
+import CustomTech from "../../assets/svg/techcapabilities/custom-tech-stack.svg";
+import Database from "../../assets/svg/techcapabilities/databases.svg";
+import LMS from "../../assets/svg/techcapabilities/learning-management-system.svg";
+import WebFramework from "../../assets/svg/techcapabilities/web-frameworks.svg";
 
 export default function TechStackSection() {
   const techItems = [
     {
-      icon: <Cloud className='w-8 h-8 text-primary' />,
+      icon: CloudInfra,
       title: "Cloud Infrastructure",
       desc: "Scalable, reliable deployments",
     },
     {
-      icon: <Layers className='w-8 h-8 text-primary' />,
+      icon: CustomTech,
       title: "Custom Tech Stack",
       desc: "Tailored solutions built for your institution",
     },
     {
-      icon: <Database className='w-8 h-8 text-primary' />,
+      icon: Database,
       title: "Databases",
       desc: "Secure, high-performance data management",
     },
     {
-      icon: <Code2 className='w-8 h-8 text-primary' />,
+      icon: LMS,
       title: "Learning Management System",
       desc: "Blackboard, Canvas, Moodle integrations",
     },
     {
-      icon: <Settings className='w-8 h-8 text-primary' />,
+      icon: WebFramework,
       title: "Web Frameworks",
       desc: "Flexible and modern development frameworks",
     },
@@ -49,7 +53,9 @@ export default function TechStackSection() {
                 index === 3 ? "md:col-start-2 md:row-start-4" : ""
               } ${index === 4 ? "md:row-start-5" : ""}`}
             >
-              <div className='flex-shrink-0'>{item.icon}</div>
+              <div className='flex-shrink-0'>
+                <img className='w-10 h-10' src={item.icon} alt={item.title} />
+              </div>
               <div>
                 <h3 className='text-2xl font-semibold text-dark mb-1'>
                   {item.title}

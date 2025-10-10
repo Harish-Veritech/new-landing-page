@@ -1,26 +1,29 @@
-import { Settings } from "lucide-react";
 import GridLayout from "../../assets/svg/photo-grid-layout.svg";
 import GlobalReach from "../../assets/img/whyabm/global-reach.png";
 import Security from "../../assets/img/whyabm/security.png";
 import GoodRelation from "../../assets/img/whyabm/good-relation.png";
 import RelationSecurityGlobalReach from "../../assets/img/whyabm/relation-security-global-reach.png";
+import GlobalProject from "../../assets/svg/whyabm/global-project.svg";
+import Scale from "../../assets/svg/whyabm/scale.svg";
+import CustomIntegration from "../../assets/svg/whyabm/custom-integration.svg";
+import IndustryLeader from "../../assets/svg/whyabm/industry-leader.svg";
 
 const WhyABM = () => {
   const whyabmLists = [
     {
-      icon: <Settings className='w-7 h-7 text-primary' />,
+      icon: GlobalProject,
       title: "500+ Global Projects in Education, Finance, Healthcare, SaaS.",
     },
     {
-      icon: <Settings className='w-7 h-7 text-primary' />,
+      icon: Scale,
       title: "Proven Scalable, Secure Solutions.",
     },
     {
-      icon: <Settings className='w-7 h-7 text-primary' />,
+      icon: CustomIntegration,
       title: "Deep Expertise in Custom Integrations.",
     },
     {
-      icon: <Settings className='w-7 h-7 text-primary' />,
+      icon: IndustryLeader,
       title:
         "71% of Top 100 Universities Use Drupal – Industry’s Leading Open-Source Platform.",
     },
@@ -77,7 +80,7 @@ const WhyABM = () => {
                       <div class='absolute inset-0 bg-primary translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out'></div>
                     </div>
                     <span class='border-2 border-grey/10 p-2 rounded-full'>
-                      {listItem.icon}
+                      <img src={listItem.icon} alt={listItem.title} />
                     </span>
                     <p class='text-start text-grey-800'>{listItem.title}</p>
                   </div>
