@@ -10,7 +10,7 @@ export default function Header() {
       id='home'
       className="relative w-full bg-[url('/assets/img/hero-bg.png')] bg-cover bg-center bg-no-repeat"
     >
-      <div className='relative grid grid-cols-1 md:grid-cols-2 pt-32 md:pt-36 z-10 px-6 md:px-8 md:pb-8 lg:pb-0 max-w-5xl lg:max-w-7xl mx-auto md:max-h-650px lg:max-h-[750px]'>
+      <div className='relative grid grid-cols-1 md:grid-cols-2 pt-32 md:pt-36 z-10 px-6 md:px-8 lg:px-0 md:pb-8 lg:pb-0 max-w-5xl lg:max-w-7xl mx-auto md:max-h-650px lg:max-h-[750px]'>
         {/* Left side */}
         <div className='w-full flex justify-start md:justify-center mb-10 md:mb-0 flex-2'>
           <div>
